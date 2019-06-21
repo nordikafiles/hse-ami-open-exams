@@ -1,0 +1,59 @@
+\section{Бинарные операции. Полугруппы, моноиды и группы. Коммутативные группы. Примеры групп. Порядок группы. Описание всех подгрупп в группе $(\mathbb{Z}, +)$.}
+
+
+
+\subsection{Бинарные операции.}
+\begin{definition}
+    Множество с бинарной операцией -- это множество $M$ с заданным отображением
+    \[
+        M \times M \to M,
+        \quad
+        (a, b) \mapsto a \circ b.
+    \]
+    Множество с бинарной операцией обычно обозначают $(M, \circ)$.
+\end{definition}
+
+\subsection{Полугруппы, моноиды и группы.}
+\begin{definition}
+    Множество с бинарной операцией $(M, \circ)$ называется \textbf{полугруппой}, если данная бинарная операция \textbf{ассоциативна}, т.е.
+    \[
+        a \circ (b \circ c) = (a \circ b) \circ c
+        \quad
+        \text{ для всех $a,b,c \in M$. }
+    \]
+\end{definition}
+\begin{definition}
+    Полугруппа $(S, \circ)$ называется \textbf{моноидом}, если в ней есть нейтральный элемент, т.е. такой элемент $e \in S$, что $e \circ a = a \circ e = a$ для любого $a \in S$.
+\end{definition}
+\begin{definition}
+    Моноид $(S, \circ)$ называется \textbf{группой}, если для каждого элемента $a \in S$ найдется обратный элемент, т.е. такой $b \in S$, что $a \circ b = b \circ a = e$.
+\end{definition}
+
+\subsection{Коммутативные группы.}
+\begin{definition}
+    Группа $(G, \circ)$ называется \textbf{коммутативной} или \textbf{абелевой}, если групповая операция коммутативна, т.е. $a \circ b = b \circ a$ для любых $a, b \in G$.
+\end{definition}
+
+\subsection{Примеры групп.}
+\begin{enumerate}
+    \item Числовые аддитивные группы: $(\mathbb{Z}, +), (\mathbb{Q}, +), (\mathbb{R}, +), (\mathbb{C}, +), (\mathbb{Z}_n, +)$.
+    \item Числовые мультипликативные группы: $(\mathbb{Q} \setminus \{0\}, \times), (\mathbb{R} \setminus \{0\}, \times), (\mathbb{C} \setminus \{0\}, \times), (\mathbb{Z}_p \setminus \{0\}, \times)$, $p$ -- простое.
+    \item Группы матриц: $GL_n(\mathbb{R}) = \{A \in Mat(n \times n, \mathbb{R}) \> | \> \det(A) \neq 0 \}; SL_n(\mathbb{R}) = \{A \in Mat(n \times n, \mathbb{R}) \> | \> \det(A) = 1 \}$.
+    \item Группы подстановок: симметрическая группа $S_n$ -- все подстановки длины $n$, $|S_n| = n!$; знакопеременная группа $A_n$ -- четные подстановки длины $n$, $|A_n| = n!/2$.
+\end{enumerate}
+
+\subsection{Порядок группы.}
+\begin{definition}
+    \textbf{Порядок} группы $G$ -- это число элементов в $G$. Группа называется \textbf{конечной}, если ее порядок конечен, и \textbf{бесконечной} иначе.
+\end{definition}
+
+
+\subsection{Описание всех подгрупп в группе $(\mathbb{Z}, +)$.}
+\begin{definition}
+    Подмножество $H$ группы $G$ называется \textbf{подгруппой}, если выполнены следующий три условия:
+    \begin{enumerate}
+        \item $e \in H$
+        \item $ab \in H$ для любых $a,b \in H$
+        \item $a^{-1} \in H$ для любого $a \in H$
+    \end{enumerate}
+\end{definition}
