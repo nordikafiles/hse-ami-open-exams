@@ -1,38 +1,38 @@
-\section{Смежные классы. Индекс подгруппы. Теорема Лагранжа.}
+\section{Пять следствий из теоремы Лагранжа.}
 
-\subsection{Смежные классы.}
-\begin{definition}
-    Пусть $G$ -- группа, $H \subseteq G$ -- подгруппа и $g \in G$. \textbf{Левым смежным классом} элемента $g$ группы $G$ по подгруппе $H$ называется подмножество
-    \[
-        gH = \{gh \> | \> h \in H \}.
-    \]
-\end{definition}
+\subsection{Следствие 1.}
+\begin{consequence} \label{consequence1}
+    Пусть $G$ -- конечная группа и $H \subseteq G$ -- подгруппа. Тогда $|H|$ делит $|G|$.
+\end{consequence}
 
-\subsection{Индекс подгруппы.}
-\begin{definition}
-    Пусть $G$ -- группа и $H \subseteq G$ -- подгруппа. \textbf{Индексом подгруппы} $H$ в группе $G$ называется число левых смежных классов $G$ по $H$.
-    Индекс группы $G$ по подгруппе $H$ обозначается $[G : H]$.
-\end{definition}
+\subsection{Следствие 2.}
+\begin{consequence} \label{consequence2}
+    Пусть $G$ -- конечная группа и $g \in G$. Тогда $ord(g)$ делит $|G|$.
+    \begin{proof}
+        Это вытекает из следствия \ref{consequence1} и утверждения \ref{statement1}.
+    \end{proof}
+\end{consequence}
 
-\subsection{Теорема Лагранжа.}
-\begin{lemma} \label{lemma1}
-    Пусть $G$ -- группа, $H \subseteq G$ -- ее подгруппа и $g_1, g_2 \in G$. Тогда либо $g_1H = g_2H$, либо $g_1H \cap g_2H = \varnothing$.
+\subsection{Следствие 3.}
+\begin{consequence} \label{consequece3}
+    Пусть $G$ -- конечная группа и $g \in G$. Тогда $g^{|G|} = e$.
     \begin{proof}
-        Предположим, что $g_1G \cap g_2H \neq \varnothing$, т.е. $g_1h_1 = g_2h_2$ для некоторых $h_1, h_2 \in H$. Нужно доказать, что $g_1H = g_2H$. Заметим, что $g_1H = g_2h_2h_1^{-1}H \subseteq g_2H$. Обратное включение доказывается аналогично.
+        Согласно следствию \ref{consequence2} мы имеем $|G| = ord(g) \cdot s$, откуда $g^|G| = (g^{ord(g)})^s = e^s = e$.
     \end{proof}
-\end{lemma}
-\begin{lemma} \label{lemma2}
-    Пусть $G$ -- группа и $H \subseteq G$ -- конечная подгруппа. Тогда $|gH| = |H|$ для любого $g \in G$.
+\end{consequence}
+
+\subsection{Следствие 4.}
+\begin{consequence}
+    Пусть $G$ -- группа. Предположим, что $|G|$ -- простое число. Тогда  $G$ -- циклическая группа, порождаемая любым своим неединичным элементом.
     \begin{proof}
-        Поскольку $gH = \{gh \> | \>  h \in H\}$, в $gH$ элементов не больше, чем в $H$. Если $gh_1 = gh_2$, то домножаем слева на $g^{-1}$ и получаем $h_1 = h_2$. Значит, все элементы вида $gh$, где $h \in H$, попарно различны, откуда $|gH| = |H|$.
+        Пусть $g \in G$ -- произвольный неединичный элемент. Тогда циклическая подгруппа $\langle g \rangle$ содержит более одного элемента и $|\langle g \rangle|$ делит $|G|$ по следствию \ref{consequence1}. Значит, $|\langle g \rangle| = |G|$, откуда $G = \langle g \rangle$.
     \end{proof}
-\end{lemma}
-\begin{theorem}
-    Пусть $G$ -- конечная группа и $H \subseteq G$ -- подгруппа. Тогда
-    \[
-        |G| = |H| \cdot [G : H].
-    \]
+\end{consequence}
+
+\subsection{Следствие 5.}
+\begin{consequence}[малая теорема Ферма]
+    Пусть $p$ -- простое число и $\text{НОД} (a, p) = 1$. Тогда $a^{p-1} \equiv 1 \mod p$.
     \begin{proof}
-        Каждый элемент группы $G$ лежит в (своем) левом смежном классе по подгруппе $H$, разные смежные классы не пересекаются (лемма \ref{lemma1}) и каждый из них содержит по $|H|$ элементов (лемма \ref{lemma2}).
+        Применим следствие \ref{consequece3} к группе $(\mathbb{Z}_p \setminus \{0\}, \times)$.
     \end{proof}
-\end{theorem}
+\end{consequence}
