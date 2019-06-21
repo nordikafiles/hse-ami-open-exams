@@ -57,3 +57,9 @@
         \item $a^{-1} \in H$ для любого $a \in H$
     \end{enumerate}
 \end{definition}
+\begin{statement}
+    Всякая подгруппа в $(\mathbb{Z}, +)$ имеет вид $k\mathbb{Z} = \{ ka \> | \> a \in \mathbb{Z} \}$ для некоторого целого неотрицательного $k$.
+    \begin{proof}
+        Пусть $H$ -- подгруппа в $\mathbb{Z}$. Если $H = \{0\}$, положим $k = 0$. Иначе пусть $k = \min(H \cap \mathbb{N})$ -- наименьшее натуральное число, лежащее в $H$. Тогда $k\mathbb{Z} \subseteq H$. С другой стороны, если $a \in H$ и $a = qk + r$ -- результат деления $a$ на $k$ с остатком, то $0 \leqslant r \leqslant k - 1$ и $r = a - qk \in H$. Отсюда $r = 0$ и $H = k\mathbb{Z}$.
+    \end{proof}
+\end{statement}
