@@ -1,0 +1,56 @@
+\section{Гомоморфизмы групп. Простейшие свойства гомоморфизмов. Изоморфизмы групп. Ядро и образ гомоморфизма групп, их свойства.}
+
+\subsection{Гомоморфизмы групп.}
+\begin{definition}
+    Пусть $G$ и $F$ -- группы. Отображение $\varphi : G \to F$ называется \textbf{гомоморфизмом}, если $\varphi(ab) = \varphi(a)\varphi(b)$ для любых $a, b \in G$.
+\end{definition}
+
+\subsection{Простейшие свойства гомоморфизмов.}
+\begin{lemma}
+    Пусть $\varphi : G \to F$ -- гомоморфизм групп и пусть $e_G$ и $e_F$ -- нейтральные элементы групп $G$ и $F$ соответственно. Тогда
+    \begin{enumerate}
+        \item[(а)] $\varphi(e_G) = e_F$
+        \item[(б)] $\varphi(a^{-1}) = \varphi(a)^{-1}$ для любого $a \in G$.
+    \end{enumerate}
+    \begin{proof}
+        (а) Имеем $\varphi(e_G) = \varphi(e_Ge_G) = \varphi(e_G)\varphi(e_G)$. Теперь умножая крайние части этого равенства на $\varphi(e_G)^{-1}$ (например, слева) получим $e_F = \varphi(e_G)$.
+        \newline
+        (б) Имеем $\varphi(a^{-1})\varphi(a) = \varphi(a^{-1}a) = \varphi(e_G) = e_F$, откуда $\varphi(a^{-1}) = \varphi(a)^{-1}$.
+    \end{proof}
+\end{lemma}
+
+\subsection{Изоморфизмы групп.}
+\begin{definition}
+    Гомоморфизм групп $\varphi : G \to F$ называется \textbf{изоморфизмом}. если отображение $\varphi$ биективно.
+\end{definition}
+
+\subsection{Ядро и образ гомоморфизма групп, их свойства.}
+\begin{definition}
+    С каждым гомоморфизмом групп $\varphi : G \to F$ связаны его ядро
+    \[
+        \operatorname{Ker}(\varphi) = \{g \in G \> | \> \varphi(g) = e_F \}
+    \]
+    и образ
+    \[
+        \operatorname{Im}(\varphi) = \{a \in F \> | \> \exists \> g \in G : \varphi(g) = a \}.
+    \]
+    Ясно, что $\operatorname{Ker}(\varphi) \subseteq G$ и $\operatorname{Im}(\varphi) \subseteq F$ -- подгруппы.
+\end{definition}
+\begin{lemma}
+    Гомоморфизм групп $\varphi : G \to F$ инъективен тогда и только тогда, когда $\operatorname{Ker}(\varphi) = \{e_G\}$.
+    \begin{proof}
+        Ясно, что если $\varphi$ инъективен, то $\operatorname{Ker}(\varphi) = \{e_G\}$. Обратно, пусть $g_1, g_2 \in G$ и $\varphi(g_1) = \varphi(g_2)$. Тогда $g_1^{-1}g_2 \in \operatorname{Ker}(\varphi)$, поскольку $\varphi(g_1^{-1}g_2) = \varphi(g_1^{-1})\varphi(g_2) = \varphi(g_1)^{-1}\varphi(g_2) = e_F$. Отсюда $g_1^{-1}g_2 = e_G$ и $g_1 = g_2$.
+    \end{proof}
+\end{lemma}
+\begin{consequence}
+    Гомоморфизм групп $\varphi : G \to F$ является изоморфизмом тогда и только тогда, когда $\operatorname{Ker}(\varphi) = \{e_G\}$ и $\operatorname{Im}(\varphi) = F$.
+\end{consequence}
+\begin{statement}
+    Пусть $\varphi : G \to F$ -- гомоморфизм групп. Тогда подгруппа $\operatorname{Ker}(\varphi)$ нормальна в $G$.
+    \begin{proof}
+        Достаточно проверить, что $g^{-1}hg \in \operatorname{Ker}(\varphi)$ для любых $g \in G$ и $h \in \operatorname{Ker}(\varphi)$. Это следует из цепочки равенств
+        \[
+            \varphi(g^{-1}hg) = \varphi(g^{-1})\varphi(h)\varphi(g) = \varphi(g^{-1})e_F\varphi(g) = \varphi(g^{-1})\varphi(g) = e_F.
+        \]
+    \end{proof}
+\end{statement}
