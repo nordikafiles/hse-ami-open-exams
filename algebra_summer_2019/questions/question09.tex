@@ -1,0 +1,40 @@
+\section{Прямое произведение групп. Разложение конечной циклической группы.}
+
+\subsection{Прямое произведение групп.}
+\begin{definition}
+    \textbf{Прямым произведением} групп $G_1, ..., G_m$ называется множество
+    \[
+        G_1 \times ... \times G_m = \{ (g_1, ..., g_m) \> | \> g_1 \in G_1, ..., g_m \in G_m \}
+    \]
+    с операцией $(g_1, ..., g_m)(g'_1, ..., g'_m) = (g_1g'_1, ..., g_mg'_m)$.
+    Ясно, что эта операция ассоциативна, обладает нейтральным элементом $(e_{G_1}, ..., e_{G_m})$ и для каждого элемента $(g_1, ..., g_m)$ есть обратный элемент $(g_1^{-1}, ..., g_m^{-1})$.
+\end{definition}
+
+\subsection{Разложение конечной циклической группы.}
+\begin{definition}
+    Группа $G$ раскладывается в прямое произведение своих подгрупп $H_1, ..., H_m$, если отображение $H_1 \times ... \times H_m \to G, (h_1, ..., h_m) \mapsto h_1 \cdot ... \cdot h_m$ является изоморфизмом.
+\end{definition}
+\begin{theorem}
+    Пусть $n = ml$ -- разложение натурального числа $n$ на два взаимно простых множителя. Тогда имеет место изоморфизм групп
+    \[
+        \mathbb{Z}_n \simeq \mathbb{Z}_m \times \mathbb{Z}_l.
+    \]
+    \begin{proof}
+        Рассмотрим отображение
+        \[
+            \varphi : \mathbb{Z}_n \to \mathbb{Z}_m \times \mathbb{Z}_l,
+            \quad
+            (k \mod n) \mapsto (k \mod m, k \mod l).
+        \]
+        Поскольку $m$ и $l$ делят $n$, отображение $\varphi$ определено корректно. Ясно, что $\varphi$ -- гомоморфизм.
+        \newline
+        Далее, $a \mod n \in \operatorname{Ker}(\varphi) \Rightarrow a \mod m = 0, a \mod l = 0 \Rightarrow 0 \Rightarrow a $ делится на $ m, a $ делится на $ k$.
+        Так как НОД$(m, l) = 1$, то $a$ делится на $n = ml \Rightarrow a \mod n = 0 \Rightarrow \operatorname{Ker}(\varphi) = \{0\}$. Следовательно, гомоморфизм $\varphi$ инъективен. Поскольку множества $\mathbb{Z}_n$ и $\mathbb{Z}_m \times \mathbb{Z}_l$ содержат одинаковое число элементов, отображение $\varphi$ биективно.
+    \end{proof}
+\end{theorem}
+\begin{consequence}
+    Пусть $n \geqslant 2$ -- натуральное число и $n = p_1^{k_1} ... p_s^{k_s}$ -- его разложение в произвежение простых множителей (где $p_i \neq p_j$ при $i \neq j$). Тогда имеет место изоморфизм групп
+    \[
+        \mathbb{Z}_n \simeq \mathbb{Z}_{p_1^{k_1}} \times ... \times \mathbb{Z}_{p_s^{k_s}}.
+    \]
+\end{consequence}

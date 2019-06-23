@@ -1,0 +1,16 @@
+\section{Классификация циклических групп.}
+
+\begin{statement}
+    Пусть $G$ -- циклическая группа. Тогда:
+    \begin{enumerate}
+        \item Если $|G| = \infty$, то $G \simeq (\mathbb{Z}, +)$
+        \item Если $|G| < \infty$, то $G \simeq (\mathbb{Z}_n, +)$
+    \end{enumerate}
+    \begin{proof}
+        По определению, если $G$ -- циклическая, то $G = \langle g \rangle$ для некоторого $g \in G$.
+        \begin{enumerate}
+            \item $\varphi : \mathbb{Z} \to G, \varphi : k \mapsto g^k$ \newline Это гомоморфизм и биекция $\Rightarrow$ изоморфизм.
+            \item $\varphi : \mathbb{Z} \to G, \varphi : k \mapsto g^k$ \newline Рассмотрим, куда переходит $k + ns$, где $0 \leqslant k \leqslant n - 1$ \newline $k + ns \mapsto g^{k + ns} = g^k g^{ns} = g^k(g^n)^s = g^k$.
+        \end{enumerate}
+    \end{proof}
+\end{statement}
