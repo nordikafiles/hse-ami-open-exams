@@ -4,5 +4,18 @@
 \begin{definition}
     Конечная абелева группа $A$ называется \textbf{примарной}, если $|A| = p^k$ для некоторого простого $p$.
 \end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=2379}
 
-\subsection{Теорема о строении конечных абелевых групп, доказательство единственности. \textcolor{orange}{(todo)}}
+\subsection{Теорема о строении конечных абелевых групп, доказательство единственности.}
+\begin{theorem}
+    Пусть $|A| < \infty$ -- конечная абелева группа. Тогда $A \simeq \mathbb{Z}_{p_1^{k_1}} \times ... \times \mathbb{Z}_{p_s^{k_s}}$, где $p_i$ -- (не обязательно различные) простые числа ($k_i \geqslant 1$), причем в этом разложении число  примарных циклических множителей и их порядки (с точностью до перестановки) определены однозначно.
+    \begin{proof}
+        Существование следует из утверждений \ref{statement10.2.1} и \ref{statement10.2.2}. Докажем единственность. Зафиксируем простое $p$. Тогда в разложении $A \simeq \mathbb{Z}_{p_1^{k_1}} \times ... \times \mathbb{Z}_{p_s^{k_s}}$
+        \[
+            \prod_{p_i = p} \mathbb{Z}_{p_i^{k_i}} \subseteq T_p(A).
+        \]
+        Пусть $a \in A$. Тогда $a = (n_1, ..., n_s), n_i \in \mathbb{Z}_{p_i^{k_i}}$. Если $p^k \cdot a = 0$ для некоторого $k$, то для любого $i$ $p^{k} \cdot n_i$ делится на $p_i^{k_i}$. Если $p \neq p_i$, то $n_i$ делится на $p_i^{k_i} \Rightarrow n_i \equiv 0 \mod p_i^{k_i} \Rightarrow a \in T_p(A) \Leftrightarrow $ для любого $i$ с условием $p \neq p_i$ $n_i = 0$ в $\mathbb{Z}_{p_i^{k_i}} \Rightarrow T_p(A) \subseteq \prod_{p_i = p} \mathbb{Z}_{p_i^{k_i}}$. Итог: достаточно доказать единственность каждого $T_p(A)$.
+        Теперь пусть $B = T_p(A) \simeq \mathbb{Z}_{p^{m_1}} \times ... \times \mathbb{Z}_{p^{m_r}}$. Индукция по $|B|$. База: $|B| = p \Rightarrow $ по следствию \ref{consequece4} из теоремы Лагранжа $B \simeq \mathbb{Z}_p$. Теперь пусть $|B| > p, |B| = p^m$, где $m = m_1 + ... + m_r$. Рассмотрим подгруппу $pB \subseteq B$, где $pB = \{ pb \> | \> b \in B \}$ $\Rightarrow pB \simeq \mathbb{Z}_{p^{m_1 - 1}} \times ... \times \mathbb{Z}_{p^{m_r - 1}}$, в частности $|pB| < |B|$. Если $m_i = 1$, то соответствующий множитель исчезает. По предположению индукции набор ненулевых чисел среди $m_1-1, ..., m_r - 1$ определен однозначно с точностью до перестановки. Следовательно, однозначно восстанавливаются все $m_i$ с условием $m_i > 1$ Число $m_i = 1$ однозначно восстанавливается из условия $m_1 + ... + m_r = m$.
+    \end{proof}
+\end{theorem}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=2507}
