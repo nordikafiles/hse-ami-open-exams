@@ -1,1 +1,18 @@
-\section{Экспонента конечной абелевы группы и критерий цикличности. \textcolor{orange}{(todo)}}
+\section{Экспонента конечной абелевы группы и критерий цикличности.}
+\begin{definition}
+    Пусть $A$ -- конечная абелева группа. \textbf{Экспонента} группы $A$ -- это чиcло
+    \[
+        \exp(A) = \text{НОК}\{ \operatorname{ord}(a) \> | \> a \in A \} = min\{ n \in \mathbb{N} \> | \> na = 0 \> \forall \> a \in A \}
+    \]
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=3792}
+\begin{statement}
+    Пусть $A$ -- конечная абелева группа. Тогда $\exp(A) = |A| \Leftrightarrow A$ -- циклическая группа.
+    \begin{proof}
+        \begin{enumerate}
+            \item[$\Leftarrow$] $A$ -- циклическая $\Rightarrow A \simeq \mathbb{Z}_n \Rightarrow \operatorname{ord}(a) = n = |A| \Rightarrow \exp(A) = |A|$ 
+            \item[$\Rightarrow$] $\exp(A) = |A|$ Знаем, что $A \simeq T_{p_1}(A) \times ... \times T_{p_s}(A)$, где $|A| = p_1^{k_1} \cdot ... \cdot p_s^{k_s}$. Пусть $b_i \in T_{p_i}(A)$ -- элемент наибольшего порядка $\Rightarrow \operatorname{ord}(b_i) = p_i^{m_i}$. Тогда для любого $a_i \in T_{p_i}(A), ..., a_s \in T_{p_s}(A)$ получаем $\operatorname{ord}(a_i) = p_i^{l_i}$, где $l_i \leqslant m_i$. $\operatorname{ord}(a_1 + ... + a_s) = \operatorname{ord}(a_1) \cdot ... \cdot \operatorname{ord}(a_s)$ делит $\operatorname{ord}(b_1) \cdot ... \cdot \operatorname{ord}(b_s) = \operatorname{ord}(b_1 + ... + b_s)$. Следовательно, $\exp(A) = \operatorname{ord}(b_1 + ... + b_s) \Rightarrow |A| = \exp(A) = |\langle b_1 + ... + b_s \rangle| \Rightarrow \langle b_1 + ... + b_s \rangle = A \Rightarrow A$ -- циклическая группа.
+        \end{enumerate}
+    \end{proof}
+\end{statement}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=4028}
