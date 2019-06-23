@@ -1,0 +1,58 @@
+\section{Кольца. Коммутативные кольца. Обратимые элементы, делители нуля и нильпотенты. Примеры колец. Поля. Критерий того, что кольцо вычетов является полем.}
+
+\subsection{Кольца.}
+\begin{definition}
+    \textbf{Кольцо} (ассоциативное кольцо с единицей) -- это множество $R$ с двумя бинарными операциями: сложение и умножение, удовлетворяющее следующим условиям
+    \begin{enumerate}
+        \item $(R, +)$ -- абелева группа
+        \item для любых $a,b,c \in R$ выполняется $a(b + c) = ab + ac$ (левая дистрибутивность) и $(a + b)c = ac + bc$ (правая дистрибутивность)
+        \item для любых $a,b,c \in R$ выполняется $(ab)c = a(bc)$ (ассоциативность умножения)
+        \item существует $1 \in R$ такая что $1 \cdot a = a \cdot 1 = a$ для любого $a \in R$
+    \end{enumerate}
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=690}
+
+\subsection{Коммутативные кольца.}
+\begin{definition}
+    Кольцо $R$ называется \textbf{коммутативным}, если $ab = ba$ для любых $a, b \in R$.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=1287}
+
+\subsection{Обратимые элементы, делители нуля и нильпотенты.}
+\begin{definition}
+    Пусть $R$ -- кольцо. Элемент $a \in R$ называется обратимым, если существует такое $b \in R$, что $ab = ba = 1$.
+\end{definition}
+\begin{definition}
+    Пусть $R$ -- кольцо. Элемент $a \in R$ называется левым (правым) \textbf{делителем нуля}, если $a \neq 0$ и существует $b \in R \setminus \{ 0 \}$, такое что $ab = 0$ ($ba = 0$).
+\end{definition}
+\begin{definition}
+    Пусть $R$ -- кольцо. Элемент $a \in R$ называется \textbf{нильпотентным} (нильпотентом), если $a \neq 0$ и существует такое $n \in \mathbb{N}$, что $a^n = 0$.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=1374}
+
+\subsection{Примеры колец.}
+\begin{enumerate}
+    \item $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$
+    \item $\mathbb{Z}_n$ -- кольцо вычетов
+    \item $Mn(\mathbb{R})$ -- кольцо матриц
+    \item $\mathbb{R}[x]$ -- кольцо многочленов от переменной $x$ c коэффициентами из $\mathbb{R}$
+\end{enumerate}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=1115}
+
+\subsection{Поля.}
+\begin{definition}
+    \textbf{Поле} -- это коммутативное (ассоциативное) кольцо (с единицей), в котором $0 \neq 1$ и всякий ненулевой элемент обратим.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=2243}
+
+\subsection{Критерий того, что кольцо вычетов является полем.}
+\begin{statement}
+    Пусть $n \in \mathbb{N}$. Тогда $\mathbb{Z}_n$ -- поле $\Leftrightarrow n$ -- простое число.
+    \begin{proof}
+        \begin{enumerate}
+            \item[$\Rightarrow$] $n = 1 \Rightarrow \mathbb{Z}_n = \{0\}$ -- не поле. \newline $n > 1$ и $n$ составное $\Rightarrow n = ml$, где $1 < m < n, 1 < l < n \Rightarrow$ в кольце $\mathbb{Z}_n ml = 0 \Rightarrow$ есть делители 0 $\Rightarrow$ не поле.
+            \item[$\Leftarrow$] $n = p$ -- простое, $a \in \mathbb{Z}$, НОД$(a,p) = 1 \Rightarrow$ существуют $k,l \in \mathbb{Z}$, такие что $ak + pl = 1 \Rightarrow ak = 1 \Rightarrow $ любой ненулевой элемент обратим.
+        \end{enumerate}
+    \end{proof}
+\end{statement}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=2484}
