@@ -1,6 +1,26 @@
-\section{Подгруппы \texorpdfstring{$p$}-кручения в абелевых группах. Разложение конечной абелевой группы в прямое произведение подгрупп \texorpdfstring{$p$}-кручения. \textcolor{orange}{(todo)}}
+\section{Подгруппы p-кручения в абелевых группах. Разложение конечной абелевой группы в прямое произведение подгрупп p-кручения.}
 
-\subsection{Подгруппы \texorpdfstring{$p$}-кручения в абелевых группах. \textcolor{orange}{(todo)}}
---
-\subsection{Разложение конечной абелевой группы в прямое произведение подгрупп \texorpdfstring{$p$}-кручения. \textcolor{orange}{(todo)}}
---
+\subsection{Подгруппы p-кручения в абелевых группах.}
+\begin{definition}
+    Пусть $(A, +)$ -- абелева группа, $p$ -- простое число. Положим
+    \[
+        T_p(A) := \{ a \in A \> | \> \exists k \geqslant 0 : p^k \cdot a = 0 \} =
+        \{ a \in A \> | \> \exists m \geqslant 0 : \operatorname{ord}(a) = p^m \}
+    \] -- подгруппа в $A$. Тогда $T_p(A)$ называется \textbf{подгруппой p-кручения}.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=1260}
+
+\subsection{Разложение конечной абелевой группы в прямое произведение подгрупп p-кручения.}
+\begin{statement}[без доказательства]
+    Пусть $|A| < \infty$ и $T_p(A) = A$ для некоторого простого $p$.
+    Тогда $A \simeq \mathbb{Z}_{p^{k_1}} \times ... \times \mathbb{Z}_{p^{k_s}}, k_i \geqslant 1$, причем число множителей и их порядки определены однозначно (с точностью до перестановки).
+\end{statement}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=1474}
+\begin{statement}
+    Пусть $|A| < \infty, |A| = p_1^{k_1} \times ... \times p_s^{k_s}$ -- разложение на простые множители. Тогда $A = T_{p_1}(A) \times ... \times T_{p_s}(A)$.
+    \begin{proof}
+        Нужно доказать, что отображение $\varphi : T_{p_1}(A) \times ... \times T_{p_s}(A) \to A, (a_1, ..., a_s) \mapsto a_1 + ... + a_s$ является изоморфизмом. Ясно, что $\varphi$ -- гомоморфизм. Докажем инъективность. Пусть $(a_1, ..., a_s) \in T_{p_1}(A) \times ... \times T_{p_s}(A)$, такое что $a_1 + ... + a_s = 0$. Для любого $i, 1 \leqslant i \leqslant s \operatorname{ord}(a_i) = p_i^{m_i}, m_i \geqslant 0$. При фиксированном $i$ умножим $a_1 + ... + a_s = 0$ на $n_i = p_1^{m_1} \cdot ... \cdot p_{i-1}^{m_{i-1}} \cdot p_{i+1}^{m_{i+1}} \cdot ... \cdot p_s^{m_s}$ и получим $n_i \cdot a_i = 0$. Следовательно, $n_i$ делится на $p_i^{m_i} \Rightarrow m_i = 0 \Rightarrow \operatorname{ord}(a_i) = 1 \Rightarrow a_i = 0 \Rightarrow \operatorname{Ker}(\varphi) = 0$. Докажем сюръективность. $a \in A \Rightarrow \operatorname{ord}(a) = p_1^{m_1} \cdot ... \cdot p_s^{m_s}$ по следствию \ref{rkzg} о разложении конечной циклической группы.
+        $\langle a \rangle = \langle b_1 \rangle \times ... \times \langle b_s \rangle$, где $b_i \in \langle a \rangle$ и $\operatorname{ord}(b_i) = p_i^{m_i}$ $\Rightarrow a = a_1 + ... + a_s$, где $a_i \in \langle b_i \rangle \subseteq T_{p_i}(A)$.
+    \end{proof}
+\end{statement}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/1oceAPu3b8o?t=1635}
