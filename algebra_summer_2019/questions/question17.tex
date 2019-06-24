@@ -1,6 +1,32 @@
-\section{Деление с остатком в кольце многочленов от одной переменной над полем. Теорема о том, что это кольцо является кольцом главных идеалов. \textcolor{orange}{(todo)}}
-
+\section{Деление с остатком в кольце многочленов от одной переменной над полем. Теорема о том, что это кольцо является кольцом главных идеалов.}
+Пусть $K$ -- поле, $K[x]$ -- кольцо многочленов от переменной $x$.
 \subsection{Деление с остатком в кольце многочленов от одной переменной над полем.}
---
+\begin{theorem}
+    Для любого $f \in K[x]$ и $g \in K[x] \setminus \{0\}$ существуют единственные $q, r \in K[x]$, такие что
+    \begin{enumerate}
+        \item $f = q \cdot g + r$
+        \item либо $r = 0$ либо $\deg(r) < \deg(g)$
+    \end{enumerate}
+    При этом $q$ -- \textbf{неполное частное}, а $r$ -- \textbf{остаток}.
+    \begin{proof}
+        Докажем существование индукцией по $\deg(f) = n$. Если $f = 0$, то можно взять $q = r = 0$. Пусть теперь $n > 0$. Если $n < \deg(g)$, то можно взять $q = 0, r = f$. Остался случай $n \geqslant \deg(g)$.
+        \[
+            f = a_nx^n + ... + a_1x + a_0,
+            \quad
+            g = b_mx^m + ... + b_1x + b_0
+            \quad
+            a_n \neq 0 \neq b_m
+        \]
+        Положим $h = f - \frac{a_n}{b_m}x^{n-m} \cdot g$. Тогда $\deg(h) < n$. Следовательно, по предположению индукции $h = q \cdot g + r$, где либо $r = 0$ либо $\deg(r) < \deg(g)$. Тогда $f = h + \frac{a_n}{b_m}x^{n-m} \cdot g = \left( q + \frac{a_n}{b_m}x^{n-m} \right) \cdot g + r$. Докажем единственность. Пусть $q_1 \cdot g + r_1 = q_2 \cdot g + r_2$, где $\forall \> i$  либо $r_i = 0$ либо $\deg(r_i) < \deg(g)$. Тогда $(q_1 - q_2) \cdot g = r_2 - r_1$. Если $q_1 \neq q_2$, то $\deg((q_1 - q_2)g) \geqslant \deg(g) > \deg(r_2 - r_1) = \deg((q_1 - q_2)g)$ -- противоречие. Таким образом, $q_1 = q_2$ и $r_1 = r_2$.
+    \end{proof}
+\end{theorem}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/YdjrTEepVpg?t=3216}
+
 \subsection{Теорема о том, что это кольцо является кольцом главных идеалов.}
---
+\begin{theorem}
+    $K[x]$ -- кольцо главных идеалов.
+    \begin{proof}
+        Пусть $I \triangleleft K[x]$. Если $I = \{0\}$, то $I = (0)$ -- главный идеал. Пусть $I \neq \{0\}$. Возьмем в $I \setminus \{0\}$ элемент $g$ наименьшей степени. Тогда $(g) \subseteq I$. Пусть теперь $f \in I$. Разделим $f$ на $g$ с остатком $f = q \cdot g + r$, где $r = 0$ или $\deg(r) < \deg(g)$. Тогда $r = f - q \cdot g \in I$ (т.к. $f \in I$ и $q \cdot g \in I$). В силу минимальности $\deg(g)$ получаем $r = 0 \Rightarrow f = q \cdot g \in (g) \Rightarrow I \subseteq (G) \Rightarrow I = (g)$.
+    \end{proof}
+\end{theorem}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/YdjrTEepVpg?t=4017}
