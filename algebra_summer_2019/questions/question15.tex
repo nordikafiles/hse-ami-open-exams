@@ -1,0 +1,64 @@
+\section{Идеалы колец. Факторкольцо кольца по идеалу. Гомоморфизмы и изоморфизмы колец. Ядро и образ гомоморфизма колец. Теорема о гомоморфизме колец.}
+
+\subsection{Идеалы колец.}
+\begin{definition}
+    Пусть $R$ -- кольцо. Подмножество $I \subseteq R$ называется идеалом, если
+    \begin{enumerate}
+        \item $I$ -- подгруппа в $R$ по сложению
+        \item $\forall \> r \in R, a \in I : ar, ra \in I$
+    \end{enumerate}
+    Обозначение: $I \triangleleft R$.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=3367}
+
+\subsection{Факторкольцо кольца по идеалу.}
+Пусть $R$ -- кольцо, $I \triangleleft R$, $R / I$ -- факторгруппа по сложению. Введем на $R / I$ операцию умножения по формуле $(a + I)(b + I) = ab + I$.
+\begin{statement}
+    Указанная выше операция корректна.
+    \begin{proof}
+        $a + I = a' + I, b + I = b' + I \Rightarrow a' = a + x, b' = b + y$, где $x,y \in I$.
+        \[
+            (a' + I)(b' + I) = a'b' + I = (a + x)(b + y) + I = ab + ay + xb + xy + I = ab + I \> (\text{т.к. } ay, xb, xy \in I).
+        \]
+        Ясно, что $R / I$ -- кольцо.
+    \end{proof}
+\end{statement}
+\begin{definition}
+    $R / I$ называется \textbf{факторкольцом} кольца $R$ по идеалу $I$.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=3984}
+
+\subsection{Гомоморфизмы и изоморфизмы колец.}
+\begin{definition}
+    Пусть $R, S$ -- кольца. Отображение $\varphi : R \to S$ называется \textbf{гомоморфизмом}, если $\varphi(a + b) = \varphi(a) + \varphi(b)$ и $\varphi(ab) = \varphi(a)\varphi(b)$ для любых $a, b \in R$.
+\end{definition}
+\begin{definition}
+    Пусть $R, S$ -- кольца. Гомоморфизм $\varphi : R \to S$ называется \textbf{изоморфизмом}, если $\varphi$ -- биекция.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=3152}
+
+\subsection{Ядро и образ гомоморфизма колец.}
+Пусть $\varphi : R \to S$ -- гомоморфизм колец.
+\begin{definition}
+    Множество $\operatorname{Ker}(\varphi) = \{ a \in R \> | \> \varphi(a) = 0 \}$ называется \textbf{ядром} гомоморфизма $\varphi$.
+\end{definition}
+\begin{definition}
+    Множество $\operatorname{Im}(\varphi) = \varphi(R)$ называется \textbf{образом} гомоморфизма $\varphi$.
+\end{definition}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/mNd30oeCugc?t=4420}
+
+\subsection{Теорема о гомоморфизме колец.}
+\begin{theorem}
+    Если $\varphi : R \to S$ -- гомоморфизм колец, то $R / \operatorname{Ker}(\varphi) \simeq \operatorname{Im}(\varphi)$.
+    \begin{proof}
+        Пусть $I = \operatorname{Ker}(\varphi)$.
+        \[
+            \psi : R / I \to \operatorname{Im}(\varphi), \> r + I \mapsto \varphi(r)
+        \]
+        Из теоремы о гомоморфизме групп известно, что $\psi$ -- изоморфизм групп $(R / I, +)$ и $(\operatorname{Im}(\varphi), +)$. Осталось проверить, что $\psi$ -- гомоморфизм колец:
+        \[
+            \psi((a + I)(b + I)) = \psi(ab + I) = \varphi(ab) = \varphi(a)\varphi(b) = \psi(a + I)\psi(b + I). 
+        \]
+    \end{proof}
+\end{theorem}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/YdjrTEepVpg}
