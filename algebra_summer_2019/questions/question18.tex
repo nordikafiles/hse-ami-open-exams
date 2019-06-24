@@ -1,4 +1,4 @@
-\section{Простые элементы. Факториальные кольца. Факториальность кольца многочленов от одной переменной над полем. \textcolor{orange}{(todo)}}
+\section{Простые элементы. Факториальные кольца. Факториальность кольца многочленов от одной переменной над полем.}
 
 \subsection{Простые элементы.}
 \begin{definition}
@@ -13,5 +13,20 @@
 \large \faYoutube \normalsize $\>$ \url{https://youtu.be/YdjrTEepVpg?t=2446}
 
 \subsection{Факториальность кольца многочленов от одной переменной над полем.}
---
-\large \faYoutube \normalsize $\>$ \url{}
+% \begin{theorem}
+%     Если $R$ -- кольцо главных идеалов, то оно факториально.
+%     \begin{proof}
+        
+%     \end{proof}
+% \end{theorem}
+% \large \faYoutube \normalsize $\>$ \url{https://youtu.be/YdjrTEepVpg?t=2815}
+\begin{definition}
+    Простые элементы в $K[x]$ называются \textbf{неприводимыми многочленами}.
+\end{definition}
+\begin{theorem}
+    $K[x]$ факториально.
+    \begin{proof}
+        Докажем индукцией по $\deg(f) = n$. Если $n = 1$, то $f = ax + b$ -- неприводимый многочлен. Пусть $n > 1$. Докажем существование. Если $f$ неприводим, то разложение будет иметь вид $f = f$. Если $f$ приводим, то $f = g \cdot h$, где $\deg(g), \deg(h) < n$. По предположению индукции $g = p_1 \cdot ... \cdot p_s$ и $h = q_1 \cdot ... \cdot q_t$, где $p_i, q_i$ -- неприводимые многочлены. Следовательно, $f = p_1 \cdot ... \cdot p_s \cdot q_1 \cdot ... \cdot q_t$ -- разложение на неприводимые многочлены. Докажем единственность. Пусть $f = p_1 \cdot ... \cdot p_n = q_1 \cdot ... \cdot q_n$, где $p_i, q_i$ -- неприводимые многочлены. Тогда $p_1$ делит $q_i$ для некоторого $i$. Без ограничения общности считаем $i = 1$. $p_1$ делит $p_1 \Rightarrow q_1 = \epsilon \cdot p_1 \Rightarrow p_1 \cdot p_2 \cdot ... \cdot p_n = p_1 \cdot \epsilon \cdot q_2 \cdot ... \cdot q_m$. Так как в $K[x]$ нет делителей нуля, сократив на $p_1$, получаем $p_2 \cdot ... \cdot p_n = (\epsilon q_2) \cdot ... \cdot q_m$. Так как $\deg < n$, то можно воспользоваться предположением индукции.
+    \end{proof}
+\end{theorem}
+\large \faYoutube \normalsize $\>$ \url{https://youtu.be/YdjrTEepVpg?t=4364}
