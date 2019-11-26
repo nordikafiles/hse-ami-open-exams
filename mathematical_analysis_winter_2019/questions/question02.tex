@@ -1,0 +1,39 @@
+\section{Критерий Коши сходимости числового ряда. Доказать расходимость гармонического ряда.}
+
+\subsection{Критерий Коши сходимости числового ряда.}
+\begin{theorem}
+    Числовой ряд сходится тогда и только тогда, когда он удовлетворяет условию Коши:
+    \[
+        \forall \varepsilon > 0
+        \exists N_{\varepsilon}
+        \forall n \geqslant N
+        \forall p \in \mathbb{N}
+        \left|
+            \sum_{k=n+1}^{n+p} a_k
+        \right| < \varepsilon
+    \]
+    \begin{proof}
+        Следует из критерия Коши сходимости числовой последовательности $S_n$.
+    \end{proof}
+\end{theorem}
+
+\subsection{Доказать расходимость гармонического ряда.}
+\begin{theorem}
+    Гармонический ряд $\sum_{n=1}^{\infty} \frac{1}{n}$ расходится.
+    \begin{proof}
+        Воспользуемся критерием Коши:
+        \[
+            \exists \varepsilon > 0
+            \forall N
+            \exists n \geqslant N
+            \exists p \in \mathbb{N}
+            |S_{n+p} - S_n| \geqslant \varepsilon
+        \]
+        Пусть $p=n$. Тогда
+        \[
+            S_{n+p} - S_{n} =
+            \frac{1}{n+1} + ... + \frac{1}{2n} \geqslant
+            \frac{n}{2n} = \frac{1}{2} = \varepsilon
+        \]
+    \end{proof}
+\end{theorem}
