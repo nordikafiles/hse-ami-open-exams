@@ -1,0 +1,34 @@
+\section{Интегральный признак сходимости числового ряда. Сходимость ряда $\sum_{k=1}^{\infty} \frac{1}{k^\alpha \ln^{\beta} k}$ в зависимости от значений $\alpha$ и $\beta$.}
+
+\subsection{Интегральный признак сходимости числового ряда.}
+\begin{theorem}
+    Пусть при любом $k \in [1, +\infty)$ выполняется $f(k) \geqslant 0$, причем $f(k) \searrow 0$. Тогда сходимость ряда $\sum_{k=1}^{\infty} f(k)$ эквивалентна сходимости несобственного интеграла $\int \limits_{1}^{\infty} f(x) dx$.
+    \begin{proof}
+        При $x \in [k, k + 1]$, в силу $f(x) \searrow$, имеем $f(k + 1) \leqslant f(x) \leqslant f(k)$. Возьмем определенный интеграл от всех частей неравенства:
+        \[
+            \int \limits_k^{k+1} f(k+1) dx
+            \leqslant
+            \int \limits_{k}^{k+1} f(x) dx
+            \leqslant
+            \int \limits_{k}^{k+1} f(k) dx
+        \]
+        \[
+            f(k+1)
+            \leqslant
+            \int \limits_{k}^{k+1} f(x) dx
+            \leqslant
+            f(k)
+        \]
+        Просуммируем теперь это неравенство по всем $k$ от $1$ до $n$. Получаем
+        \[
+            \sum_{k=2}^{n + 1} f(k)
+            \leqslant
+            \int \limits_1^{n+1} f(x) dx
+            \leqslant
+            \sum_{k=1}^{n} f(k)
+        \]
+        Теперь, если ряд $\sum_{k=1}^{\infty}$ сходится, то из правой части неравенства следует, что сходится интеграл. Если же сходится интеграл, то из левой части неравенства вытекает, что сходится ряд. Аналогично с расходимостью.
+    \end{proof}
+\end{theorem}
+
+\subsection{Сходимость ряда $\sum_{k=1}^{\infty} \frac{1}{k^\alpha \ln^{\beta} k}$ в зависимости от значений $\alpha$ и $\beta$. (TODO)}

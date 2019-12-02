@@ -1,0 +1,47 @@
+\section{Критерий сходимости ряда с неотрицательными членами через частичные суммы. Теорема о сравнении и предельный признак сравнения.}
+
+\subsection{Критерий сходимости ряда с неотрицательными членами через частичные суммы.}
+\begin{theorem}\label{nec_st}
+    Ряд с неотрицательными членами $\sum_{n=1}^{\infty} p_n$ сходится тогда и только тогда, когда последовательность частиных сумм $\{S_n\}$ ограничена.
+    \begin{proof}
+        Необходимость следует из того, что любая сходящаяся последовательность является ограниченной. Поскольку $p_n \geqslant 0$, то $\{S_n\}$ монотонно возрастает, а тогда по теореме Вейерштрасса эта последовательность сходится тогда и только тогда, когда она является ограниченной сверху. Тем самым доказана достаточность.
+    \end{proof}
+\end{theorem}
+
+\subsection{Теорема о сравнении и предельный признак сравнения.}
+\begin{theorem}[первый признак сравнения]\label{first_comp}
+    Если $\forall n \in \mathbb{N} \Rightarrow 0 \leqslant p_n \leqslant q_n$, то
+    \begin{enumerate}
+        \item Из сходимости $\sum q_n$ следует сходимость $\sum p_n$
+        \item Из расходимости $\sum p_n$ следует расходимость $\sum q_n$
+    \end{enumerate}
+    \begin{proof}
+        \text{}
+        \begin{enumerate}
+            \item Напрямую следует из теоремы \ref{nec_st}.
+            \item Предположим, что $\sum p_n$ расходится, а $\sum q_n$ сходится. Тогда получаем противоречие с пунктом 1.
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}[предельный признак сравнения]
+    Если $p_n > 0, q_n > 0$ и $\exists \lim_{n \to \infty} = l \in (0, +\infty)$, то ряды $\sum p_n$ и $\sum q_n$ сходятся и расходятся одновременно.
+    \begin{proof}
+        По определению предела
+        \[
+            \forall \varepsilon
+            \exists N_{\varepsilon}
+            \forall n \geqslant N
+            \Rightarrow
+            \left|
+                \frac{p_n}{q_n} - l
+            \right| < \varepsilon
+            \Leftrightarrow
+            l - \varepsilon < \frac{p_n}{q_n} < l + \varepsilon
+            \Leftrightarrow
+            q_n(l - \varepsilon) < p_n < q_n(l + \varepsilon).
+        \]
+        Осталось лишь воспользоваться теоремой \ref{first_comp}.
+    \end{proof}
+\end{theorem}
+
