@@ -1,0 +1,27 @@
+\section{Абсолютно сходящиеся ряды. Докажите, что абсолютно сходящийся ряд сходится.}
+
+\begin{definition}
+    Будем говорить, что ряд $\sum u_k$ сходится абсолютно, если $\sum |u_k|$ сходится.
+\end{definition}
+
+\begin{theorem}
+    Абсолютно сходящийся ряд сходится.
+    \begin{proof}
+        По критерию Коши имеем
+        \[
+            \forall \varepsilon > 0
+            \exists N(\varepsilon)
+            \forall n \geqslant N
+            \forall p \in N
+            \sum_{k=n+1}^{n+p} |u_k| < \varepsilon.
+        \]
+        Осталось лишь воспользоваться неравенством
+        \[
+            \left|
+                \sum_{k=n+1}^{n+p} u_k
+            \right|
+            \leqslant
+            \sum_{k=n+1}^{n+p} |u_k| < \varepsilon.
+        \]
+    \end{proof}
+\end{theorem}
