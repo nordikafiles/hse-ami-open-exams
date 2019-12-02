@@ -1,10 +1,61 @@
 \section{Признак Даламбера в простой и предельной формах. Примеры.}
+
 \begin{theorem}[признак Даламбера в допредельной форме]
     Если $\forall k \in \mathbb{N}$ выполнено
     \[
-        \frac{p_{k+1}}{p_{k}} \leqslant q < 1,
-    \] то ряд $\sum p_k$ сходится. В противном случае ряд расходится.
+        \frac{p_{k+1}}{p_{k}} \leqslant q < 1
+        \left(
+            \frac{p_{k+1}}{p_{k}} \geqslant 1
+        \right)
+        ,
+    \] то ряд $\sum p_k$ сходится (расходится).
     \begin{proof}
-        
+        Положим $p'_k = q^k$. Тогда
+        \[
+            \frac{p'_{k+1}}{p'_k} = q < 1
+            \left(
+                \frac{p'_{k+1}}{p'_k} = 1
+            \right)
+        \]
+        \[
+            \frac{p_{k+1}}{p_{k}} \leqslant
+            \frac{p'_{k+1}}{p'_{k}}
+            \left(
+                \frac{p_{k+1}}{p_{k}} \geqslant
+                \frac{p'_{k+1}}{p'_{k}}
+            \right)
+        \]
+        Но теперь, учитывая тот факт, что ряд $\sum_{k=1}^{\infty} p'_k$ сходится (расходится) и, пользуясь первым признаком сравнения (теорема \ref{first_comp}), делаем вывод, что ряд $\sum_{k=1}^{\infty} p_k$ сходится (расходится).
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}[признак Даламбера в предельной форме]
+    Пусть существует
+    \[
+        \lim_{k \to \infty} \frac{p_{k+1}}{p_{k}} = L
+    \]
+    Тогда при $L < 1$ ряд $\sum p_k$ сходится, при $L > 1$ расходится, а при $L = 1$ может как сходиться, так и расходиться.
+    \begin{proof}
+        Как мы знаем,
+        \[
+            \lim_{k \to \infty} \frac{p_{k+1}}{p_{k}} = L
+        \]
+        Это означает, что $\forall \varepsilon > 0 \exists N(\varepsilon) \forall k \geqslant N$ выполняется
+        \[
+            L - \varepsilon < \frac{p_{k+1}}{p_{k}} < L + \varepsilon
+        \]
+        Теперь если $L > 1$, то мы можем выбрать такое $\epsilon$, что $L + 2 \varepsilon = 1 \Leftrightarrow L + \varepsilon = 1 - \varepsilon$. Но тогда
+        \[
+            \frac{p_{k+1}}{p_k} < L + \varepsilon < 1
+        \]
+        Тем самым получили допредельный вариант теоремы, из которого следует, что ряд $\sum p_k$ сходится.
+        \newline
+        Пусть теперь $L > 1$. Выберем такое $\varepsilon$, что $L - \varepsilon = 1$. Получаем
+        \[
+            \frac{p_{k+1}}{p_k} > L - \epsilon = 1
+        \]
+        Снова получили допредельный вариант теоремы, из которого следует, что ряд $\sum p_k$ расходится.
+        \newline
+        Наконец, рассмотрим ряды $\sum \frac{1}{k}$ и $\sum \frac{1}{k^2}$. В обоих случаях $L=1$, но ряд $\sum \frac{1}{k}$ расходится, а ряд $\sum \frac{1}{k^2}$ сходится.
     \end{proof}
 \end{theorem}
