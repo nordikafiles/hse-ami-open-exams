@@ -1,0 +1,37 @@
+\section{Признак сравнения для функциональных рядов. Признак Вейерштрасса равномерной сходимости функционального ряда.}
+
+\subsection{Признак сравнения для функциональных рядов.}
+
+
+\subsection{Признак Вейерштрасса равномерной сходимости функционального ряда.}
+\begin{theorem}
+    Пусть
+    \[
+        \exists \{c_k\}
+        \forall k \in \mathbb{N}
+        \forall x \in \mathbb{E}
+        |u_k(x)| \leqslant c_k.
+    \]
+    Тогда если $\sum c_k$ сходится, то $\sum u_k(x)$ сходится равномерно на $\mathbb{E}$.
+    \begin{proof}
+        Воспользуемся признаком Коши сходимости числового ряда:
+        \[
+            \forall \varepsilon > 0
+            \exists N(\varepsilon)
+            \forall n \geqslant N
+            \forall p \in \mathbb{N}
+            \left|
+                \sum_{k=n+1}^{n+p} c_k
+            \right| < \varepsilon
+        \]
+        Заметим, что модуль можно опустить. В условии теоремы мы неявно полагаем, что $c_k \geqslant 0$, иначе условие $|u_k(x)| \leqslant c_k$ никак не может выполняться. Тогда
+        \[
+            \left|
+                \sum_{k=n+1}^{n+p} u_k(x)
+            \right| \leqslant
+            \sum_{k=n+1}^{n+p} |u_k(x)|
+            \leqslant
+            \sum_{k=n+1}^{n+p} c_k < \varepsilon.
+        \]
+    \end{proof}
+\end{theorem}

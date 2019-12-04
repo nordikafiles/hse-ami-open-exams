@@ -1,0 +1,31 @@
+\section{Дайте определение равномерной ограниченности последовательности функций. Сформулируйте признаки Дирихле и Абеля равномерной сходимости ряда (б.д.).}
+
+\subsection{Дайте определение равномерной ограниченности последовательности функций.}
+\begin{definition}
+    Будем говорить, что функциональная последовательность $\{f_k(x)\}$ равномерно ограничена на $\mathbb{E}$, если
+    \[
+        \exists M > 0
+        \forall k \in \mathbb{N}
+        \forall x \in \mathbb{E}
+        |f_k(x)| \leqslant M
+    \]
+\end{definition}
+
+\subsection{Сформулируйте признаки Дирихле и Абеля равномерной сходимости ряда (б.д.).}
+\begin{theorem}[Признак Дирихле]
+    Пусть выполнено:
+    \begin{enumerate}
+        \item Последовательность частичных сумм $\{U_n(x)\}$ равномерно ограничена на $\mathbb{E}$.
+        \item Функциональная последовательность $\{v_k(x)\}$ монотонна по $k$ на $\mathbb{E}$ и $\{v_k(x)\} \rightrightarrows 0$ на $\mathbb{E}$.
+    \end{enumerate}
+    Тогда $\sum u_k(x) \cdot v_k(x) \rightrightarrows$ на $\mathbb{E}$.
+\end{theorem}
+
+\begin{theorem}
+    Пусть выполнены условия:
+    \begin{enumerate}
+        \item Функциональная последовательность $\{v_k(x)\}$ равномерно ограничена на $\mathbb{E}$, и $\forall x \in \mathbb{E}$ последовательность $\{v_k(x)\}$ монотонна по $k$.
+        \item $\sum u_k(x) \rightrightarrows$ на $\mathbb{E}$
+    \end{enumerate}
+    Тогда функциональный ряд $\sum u_k(x) \cdot v_k(x) \rightrightarrows$ на $\mathbb{E}$.
+\end{theorem}

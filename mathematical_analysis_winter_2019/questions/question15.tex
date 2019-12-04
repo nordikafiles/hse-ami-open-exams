@@ -1,0 +1,45 @@
+\section{Критерий Коши сходимости функциональных последовательностей и рядов.}
+
+\begin{theorem}[Критерий Коши равномерной сходимости функциональной последовательности]\label{koshfun}
+    \[
+        \{f_n(x)\} \rightrightarrows \text{ на } \mathbb{E}
+        \Leftrightarrow
+        \forall \varepsilon > 0 \>
+        \exists N(\varepsilon) \>
+        \forall n \geqslant N \>
+        \forall p \in \mathbb{N} \>
+        \forall x \in \mathbb{E} \>
+        |f_n(x) - f_{n+p}(x)| < \varepsilon
+    \]
+    \begin{proof}
+        \text{} \newline
+        \begin{itemize}
+            \item \textbf{Необходимость}
+                Пусть $\{f_n(x)\} \rightrightarrows f(x)$ на $\mathbb{E}$. Тогда
+                \[
+                    \forall \varepsilon > 0
+                    \exists N(\varepsilon)
+                    \forall n \geqslant N
+                    \forall x \in \mathbb{E}
+                    |f_n(x) - f(x)| < \frac{\varepsilon}{2}.
+                \]
+                Тогда и подавно $\forall p \in \mathbb{N} |f_{n+p}(x) - f(x)| < \frac{\varepsilon}{2}$. Но
+                \[
+                    |f_{n+p}(x) - f_n(x)| = |f_{n+p}(x) - f(x) + f(x) - f_n(x)|
+                    \leqslant
+                    |f_{n+p}(x) - f(x)| + |f_n(x) - f(x)| < \varepsilon.
+                \]
+            \item \textbf{Достаточность}
+            Зафиксируем произвольное $x \in \mathbb{E}$. Теперь, используя признак Коши сходимости числовой последовательности, получаем сходимость $\{f_n(x)\} \forall x \in \mathbb{E}$. А это значит, что существует предельная функция $f(x)$.
+            \newline
+            Снова зафиксируем произвольные $x \in \mathbb{E}$ и $\varepsilon > 0$. Делая предельный перезод в неравенстве $|f_{n+p}(x) - f_n(x)| < \varepsilon$ при $p \to \infty$, получаем $|f_n(x) - f(x)| \leqslant \varepsilon < 2 \varepsilon = \varepsilon'$.
+        \end{itemize}
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}
+    Функциональный ряд сходится равномерно, тогда и только тогда, когда последовательность его частичных сумм сходится равномерно.
+    \begin{proof}
+        Прямое следствие из теоремы \ref{koshfun}.
+    \end{proof}
+\end{theorem}
