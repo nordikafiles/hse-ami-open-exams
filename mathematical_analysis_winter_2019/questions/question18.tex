@@ -1,8 +1,46 @@
 \section{Приведите пример последовательности непрерывных функций, которая поточечно сходится к разрывной функции. Теорема об интеграле от равномерного пределеа непрерывных функций и ее следствие для равномерно сходящихся рядов.}
 
 \subsection{Приведите пример последовательности непрерывных функций, которая поточечно сходится к разрывной функции.}
+\[
+    f_n(x) = \cos^{2n} x \to f(x) =
+    \begin{cases}
+        1, & x = \pi k, k \in \mathbb{Z} \\
+        0, & \text{иначе}
+    \end{cases}
+\]
+Очевидно, что $f_n(x)$ непрерывная, а $f(x)$ разрывная.
 
 \subsection{Теорема об интеграле от равномерного предела непрерывных функций и ее следствие для равномерно сходящихся рядов.}
-% \begin{theorem}
-    
-% \end{theorem}
+\begin{theorem}\label{inttheorem}
+    Пусть $f_n$ непрерывна на отрезке $[a, b]$ при всех $n \in \mathbb{N}$. Пусть $f_n \rightrightarrows f$ на $[a,b]$ при $n \to \infty$. Тогда
+    \[
+        \int \limits_a^x f_n(t) dt \rightrightarrows \int \limits_a^x f(t) dt
+    \]
+    \begin{proof}
+        Так как функция $f_n$ непрерывна на отрезке $[a, b]$, то функция $f$ также непрерывна на этом отрезке. В частности $f$ интегрируема по Риману на $[a, x], a \leqslant x \leqslant b$. Поскольку $f_n \rightrightarrows f$, имеем
+        \[
+            \exists N = N(\varepsilon/(b-a))
+            \forall n \geqslant N
+            \forall x \in [a, b]
+            |f_n(x) - f(x)| < \frac{\varepsilon}{b - a}
+        \]
+        Следовательно, при $n \geqslant N$
+        \[
+            \sup \left|
+                \int \limits_a^x f_n(t) dt - 
+                \int \limits_a^x f(t) dt
+            \right| \leqslant \int \limits_a^b
+            |f_n(t) - f(t)| dt \leqslant
+            \int \limits_a^b \frac{\varepsilon}{b - a} dt = \varepsilon
+            \text{, т.е. }
+            \int \limits_a^x f_n(t) dt \rightrightarrows \int \limits_a^x f(t) dt
+        \]
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}[Теорема о почленном интегрировании функционального ряда]
+    Пусть $u_k \in C([a,b])$ и ряд $\sum u_k$ равномерно сходится на $[a,b]$. Тогда ряд $\sum \int \limits_a^x f(t) dt$ тоже равномерно сходится на $[a,b]$ и его сумма равна $\int \limits_a^x \sum u_k dt \forall x \in [a,b]$.
+    \begin{proof}
+        Применяем теорему \ref{inttheorem} к последовательности частичных сумм.
+    \end{proof}
+\end{theorem}
