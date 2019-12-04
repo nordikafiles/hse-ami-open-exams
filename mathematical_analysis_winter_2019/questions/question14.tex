@@ -1,0 +1,43 @@
+\section{Дайте определение поточечной и равномерной сходимости функциональных последовательностей и рядов. Необходимое условие равномерной сходимости функционального ряда.}
+
+\subsection{Дайте определение поточечной и равномерной сходимости функциональных последовательностей и рядов.}
+\begin{definition}
+    Будем говорить, что функциональная последовательность $\{f_n(x)\}$ \textbf{сходится поточечно} на $\mathbb{E}$, если $\forall x_0 \in \mathbb{E}$ сходится уже числовая последовательность $\{f_n(x_0)\}$.
+\end{definition}
+\begin{definition}
+    Будем говорить, что функциональная последовательность $\{f_n(x)\}$ сходится на $\mathbb{E}$ \textbf{равномерно} к функции $f$, если
+    \[
+        \forall \varepsilon > 0 \>
+        \exists N(\varepsilon)
+        \forall n \geqslant N \>
+        \forall x \in \mathbb{E} \>
+        |f_n(x) - f(x)| < \varepsilon.
+    \]
+    Для равномерной сходимости принято использовать обозначение $\{f_n(x)\} \rightrightarrows f(x)$.
+\end{definition}
+
+\begin{definition}
+    Будем говорить, что функциональный ряд $\{\sum f_n(x)\}$ \textbf{сходится поточечно} на $\mathbb{E}$, если $\forall x_0 \in \mathbb{E}$ сходится уже числовой ряд $\{\sum f_n(x_0)\}$.
+\end{definition}
+\begin{definition}
+    Будем говорить, что функциональный ряд $\{\sum f_n(x)\}$ сходится на $\mathbb{E}$ \textbf{равномерно} к функции $S(x)$, если
+    \[
+        \forall \varepsilon > 0 \>
+        \exists N(\varepsilon)
+        \forall n \geqslant N \>
+        \forall x \in \mathbb{E} \>
+        \left|
+            \sum_{k=1}^{n} f_k(x) - S(x)
+        \right| < \varepsilon.
+    \]
+    Для равномерной сходимости принято использовать обозначение $\sum f_n(x) \rightrightarrows S(x)$.
+\end{definition}
+
+
+\subsection{Необходимое условие равномерной сходимости функционального ряда.}
+\begin{theorem}
+    Если $\sum u_n(x)$ равномерно сходится на $\mathbb{E}$, то $u_k(x) \rightrightarrows 0$ на $\mathbb{E}$.
+    \begin{proof}
+        Просто заметим, что $u_n(x) = U_n(x) - U_{n-1}(x) \rightrightarrows S(x) - S(x) = 0$, где $U_n(x) = \sum_{k=1}^{n} u_k(x)$.
+    \end{proof}
+\end{theorem}
