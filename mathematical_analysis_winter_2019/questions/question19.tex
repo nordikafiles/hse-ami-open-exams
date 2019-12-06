@@ -1,2 +1,28 @@
 \section{Теорема о производной функционального предела и ее следствие для рядов.}
 
+\begin{theorem}
+    Пусть $\forall n f_n \in C^1([a, b])$ ($f_n$ непрерывно дифференцируема на $[a,b]$, т.е. существует производная и она непрерывна). Пусть $\{f_n(c)\}$ сходится для некоторой $c \in [a,b]$ и пусть $f_n' \rightrightarrows \varphi$. Тогда $\{f_n\}$ сходится равномерно на $[a,b]$ к некоторой функции $f \in C^1([a,b])$ и $f' = \varphi$, то есть $$\left(\lim_{n \to \infty} f_n\right)' = \lim_{n \to \infty} f_n'$$.
+    \begin{proof}
+        По теореме ? о непрерывности предельной функции $\varphi$ непрерывна на $[a,b]$.
+        По теореме \ref{inttheorem} об интеграле от равномерного предела непрерывных функций и формуле Ньютона-Лейбница:
+        \[
+            f_n(x) - f_n(c) =
+            \int \limits_c^x f'_n(t) dt
+            \rightrightarrows
+            \int \limits_a^x \varphi(t) dt
+        \]
+        \[
+            f(x) - f(c) = \int \limits_a^x \varphi(t) dt
+        \]
+        \[
+            f'(x) = \varphi(x)
+        \]
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}
+    Пусть $\sum u_k$ сходится в точке $c \in [a, b]$, а ряд $\sum u'_k$ сходится равномерно на $[a,b]$. Тогда $\sum u_k$ сходится равномерно на $[a,b]$ и $(\sum u_k)' = \sum u'_k$.
+    \begin{proof}
+        Доказывается аналогично.
+    \end{proof}
+\end{theorem}
