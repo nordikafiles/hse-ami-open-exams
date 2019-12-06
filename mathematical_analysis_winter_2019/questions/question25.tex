@@ -1,5 +1,44 @@
 \section{Вычислите ряды Маклорена для функций $\frac{1}{1-x}$ и $\frac{1}{(1-x)^2}$ и докажите, что эти функции аналитичны в точке 0. Приведите пример неаналитической функции (б.д.).}
 
 \subsection{Вычислите ряды Маклорена для функций $\frac{1}{1-x}$ и $\frac{1}{(1-x)^2}$ и докажите, что эти функции аналитичны в точке 0.}
+\begin{statement}
+    \[
+        f(x) = \frac{1}{1-x} = 1 + x + x^2 + ... = \sum_{k=0}^{\infty} x^k
+        \text{ при } |x| < 1.
+    \]
+    \begin{proof}
+        Заметим, что $S_n = 1 + x + x^2 + ... + x^{n-1}$. Умножим обе части на $x$:
+        \[
+            x \cdot S_n = x + x^2 + ... + x^n
+        \]
+        Далее заметим, что
+        \[
+            x + x^2 + ... + x^{n-1} = S_n - 1 \Rightarrow
+            x \cdot S_n = S_n - 1 + x^n \Rightarrow
+            S_n = \frac{1 - x^n}{1 - x} \Rightarrow
+            \lim_{n \to \infty} S_n = \frac{1}{1 - x}
+        \]
+    \end{proof}
+\end{statement}
+\begin{statement}
+    \[
+        g(x) = \frac{1}{(1 - x)^2} = 1 + 2x + 3x^2 + ... = \sum (k+1) x^k
+        \text{ при } |x| < 1.
+    \]
+    \begin{proof}
+        $g(x) = (f(x))^2$
+    \end{proof}
+\end{statement}
+
 
 \subsection{Приведите пример неаналитической функции (б.д.).}
+\[
+    x_0 = 0,
+    \quad
+    f(x) =
+    \begin{cases}
+        0, & x = 0 \\
+        e^{-1/x^2}, & x \neq 0 \\
+    \end{cases}
+\]
+Ряд Тейлора равен 0, т.к. $f^{(k)}(0) = 0 \> \> \forall k$.
