@@ -1,7 +1,61 @@
 \section{Дайте определение квадрируемости плоской фигуры по Жордану. Докажите критейрий квадрируемости плоской фигуры. В чем состоит свойство конечной аддитивности меры Жордана?}
 
 \subsection{Дайте определение квадрируемости плоской фигуры по Жордану.}
+\begin{definition}
+    Множество $M \subset \mathbb{R}^2$ называется элементарным, если его можно представить в виде объединения конечного числа непересекающихся прямоугольников с вычислимой площадью.
+\end{definition}
+\begin{definition}
+    Пусть $E \subset \mathbb{R}^2$ -- ограниченное множество. Числа
+    \[
+        S_*(E) = \sup_{A \subset E} S(A),
+        \quad
+        S^*(E) = \inf_{E \subset B} S(B),
+    \] где верхняя и нижняя грани берутся по всем желементарным множествам $A$ и $B$ ($A \subset E \subset B$), называются соответственно нижней и верхней мерой множества $E$.
+\end{definition}
+\begin{definition}
+    Ограниченное множество $E \subset \mathbb{R}^2$ называется квадрируемым по Жордану, если его нижняя и верхняя меры совпадают (т.е. $S_*(E) = S^*(E)$).
+\end{definition}
 
 \subsection{Докажите критейрий квадрируемости плоской фигуры.}
+\begin{theorem}
+    Плоская фигура $E$ квадрируема тогда и только тогда, когда
+    \[
+        \forall \varepsilon > 0
+        \exists Q, P (P \subset e \subset Q)
+        \quad
+        S(Q) - S(P) < \varepsilon
+    \]
+    \begin{proof}
+        \text{} \newline
+        \begin{enumerate}
+            \item \textbf{Необходимость} \newline
+            Пусть $E$ квадрируема, т.е. $S_*(E) = S^*(E)$. По определению верхней и нижней меры для любого фиксированного $\varepsilon > 0$ найдутся такие $P$ и $Q (P \subset E \subset Q)$, что $S_* - \frac{\varepsilon}{2} < S(P) \leqslant S_*, S^* < S(Q) \leqslant S^* + \frac{\varepsilon}{2}$.
+            Получается, что $S(Q) - S(P) < \varepsilon$
+            \item \textbf{Достаточность} \newline
+            Пусть 
+            \[
+                \forall \varepsilon > 0
+                \exists Q, P (P \subset E \subset Q)
+                S(Q) - S(P) < \varepsilon
+            \]
+            \[
+                S(P) \leqslant S_* \leqslant S^* \leqslant S(Q)
+                \Rightarrow
+                0 \leqslant S^* - S_* \leqslant S(Q) - S(P) < \varepsilon
+            \]
+            Так как $\varepsilon$ -- произвольное положительное число, то получаем, что $S_* = S^*$.
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
 
 \subsection{В чем состоит свойство конечной аддитивности меры Жордана?}
+\begin{definition}
+    Измеримость по Жордану обладает свойством конечной аддитивности, т.е. если
+    \[
+        F = \bigcup_{i=1}^n F_i,
+    \]
+    а для любых $i \neq j$ выполняется $F_i \cap F_j = \varnothing$, причем все $F_i$ измеримы, то и $F$ измерима, причем
+    \[
+        S(F) = \sum S(F_i)
+    \]
+\end{definition}

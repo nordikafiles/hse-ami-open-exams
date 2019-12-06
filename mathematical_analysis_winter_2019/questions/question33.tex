@@ -1,1 +1,21 @@
 \section{Докажите, что функция, непрерывная на компакте, интегрируема на нем (теорему Кантора нужно сформулировать, но не обязательно доказывать).}
+
+\begin{theorem}
+    Функция, непрерывная на компакте, интегрируема на нем.
+    \begin{proof}
+        По теореме Вейерштрасса функция $f$ -- ограничена на $E$. Если $S(E) = -$, то $\int \limits_E f(x) dx = 0$. Если $S(E) > 0$ и $f \in C(E)$, то по теореме Кантора $f$ -- равномерно непрерывна на $E$, т.е.
+        \[
+            \forall \varepsilon > 0
+            \exists \delta(\varepsilon) > 0
+            \forall x_1, x_2 \in E
+            \rho(x_1, x_2) < \delta(\varepsilon)
+            \Rightarrow
+            |f(x_1) - f(x_2)| < \frac{\varepsilon}{S(E)}
+        \]
+        Возьмем далее разбиение $\tau$ множество $E$ настолько мелким, чтобы выполнялось неравенство: $d_{\tau} \leqslant \delta(\varepsilon)$. Для него имеем:
+        \[
+            \sum_{k=1}^N (\sup f(x) - \inf f(x)) S(E_k) \leqslant \frac{\varepsilon}{S(E)} \sum_{k=1}^N S(E_k) = \varepsilon.
+        \]
+        Следовательно, $f$ интегрируема на данном компакте
+    \end{proof}
+\end{theorem}

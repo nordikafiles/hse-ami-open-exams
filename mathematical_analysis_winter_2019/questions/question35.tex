@@ -1,1 +1,28 @@
 \section{Теорема о среднем для двойного интеграла (формулировка и доказательство).}
+
+\begin{theorem}
+    \text{} \newline
+    \begin{enumerate}
+        \item Если $f$ интегрируема на $A \subseteq R^2$ и если $\forall x \in A \> m \leqslant f(x,y) \leqslant M$, то $m \cdot S(A) \leqslant \iint \limits_{A} f(x,y) dx dy \leqslant M \cdot S(A)$
+        \item Если $f$ -- непрерывна, множество $A$ связно, то
+        \[
+            \exists (x_0, y_0) \in A \> f(x_0, y_0) =
+            \frac{
+                \iint \limits_A f(x,y) dx dy
+            }{ S(A) }
+        \]
+    \end{enumerate}
+    \begin{proof}
+        \text{} \newline
+        \begin{enumerate}
+            \item Просто навесить интеграл на данное неравенство.
+            \item Из первого пункта следует, что
+            \[
+                m = \min_A f = f(x_1, y_1) \leqslant R = \frac{
+                    \iint \limits_A f(x,y) dx dy
+                }{ S(A) } \leqslant M = \max_A f = f(x_2, y_2).
+            \]
+            Так как множество связно, то существует непрерывная кривая $(\varphi(t), \psi(t))$, такая что $(\varphi(0), \psi(0)) = (x_1, y_1), (\varphi(1), \psi(1)) = (x_1, y_1)$. Рассмотрим функцию $g(t) = f(\varphi(t), \psi(t))$. Она непрерывна на отрезке $[0,1]$ и достигает минимума и максимума на концах. Значит, существует некоторая точка $c \in [0, 1]$ такая, что $f(\varphi(c), \psi(c)) = g(c) = R$ (по теореме о промежуточном значении).
+        \end{enumerate}
+    \end{proof}
+\end{theorem}

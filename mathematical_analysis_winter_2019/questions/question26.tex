@@ -1,5 +1,41 @@
 \section{Запишите ряды Маклорена для функций $e^x, \cos x, \sin x, \ln(1+x), \arctg x, (1 + x)^\alpha$. Докажите аналитичность функции $e^x$ и функции $\ln (1+x)$ в точке 0.}
 
 \subsection{Запишите ряды Маклорена для функций $e^x, \cos x, \sin x, \ln(1+x), \arctg x, (1 + x)^\alpha$.}
+\begin{enumerate}
+    \item $$e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$$
+    \item $$\cos x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}$$
+    \item $$\sin x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n + 1}}{(2n + 1)!}$$
+    \item $$\ln (1 + x) = \sum_{n=1}^\infty \frac{(-1)^{n+1} x^n}{n}$$
+    \item $$\arctg x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n + 1}}{2n + 1}$$
+    \item $$(1 + x)^\alpha = \sum_{n=0}^\infty \binom{\alpha}{n} x^n = \sum_{n=0}^\infty  \frac{\alpha(\alpha - 1)...(\alpha - n + 1)x^n}{n!}$$
+\end{enumerate}
 
 \subsection{Докажите аналитичность функции $e^x$ и функции $\ln (1+x)$ в точке 0.}
+\begin{statement}
+    \[
+        e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + ...
+        \quad \forall x \in \mathbb{R}
+    \]
+    \begin{proof}
+        Имеем 
+        \[
+            r_{n, f} = \frac{f^{(n+1)}(c)}{(n+1)!} x^{n+1} = \frac{e^c}{(n+1)!} x^{n+1}
+        \]  для некоторого $c \in [0, x]$.
+        \[
+            |r_{n, f}| \leqslant \frac{e^{|x|} |x|^{n+1}}{(n+1)!} \to 0.
+        \]
+        Поскольку $(n+1)! \geqslant (\frac{n}{2})^{n/2} \Rightarrow (n+1)!$ растет быстрее, чем $x^{n+1}$.
+    \end{proof}
+\end{statement}
+\begin{statement}
+    \[
+        f(x) = \ln (1 + x) = x - \frac{x^2}{2!} + \frac{x^3}{3!} -...
+    \]
+    \begin{proof}
+        \[
+            \frac{1}{1+ x} = 1 - x + x^2 - x^3 + ... = (\ln(1 + x))'
+            \Rightarrow
+            \ln (1 + x) = x - \frac{x^2}{2!} + \frac{x^3}{3!} -...
+        \]
+    \end{proof}
+\end{statement}

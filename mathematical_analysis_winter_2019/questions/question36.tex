@@ -1,1 +1,49 @@
 \section{Теорема о сведении двойного интеграла к повторному (доказательство для прямоугольной области).}
+
+\begin{theorem}
+    Пусть $R = [a, b] \times [c, d]$.
+    Если $f$ интегрируема на $R$ и для любого $\widetilde{x} \in [a, b]$ существует $I(\widetilde{x}) = \int \limits_c^d f(\widetilde{x}, y) dy$, тогда существует интеграл
+    \[
+        \int \limits_a^b \left(
+            \int \limits_c^d f(x,y) dy
+        \right) dx =
+        \iint \limits_R f(x,y) dx dy
+    \]
+    \begin{proof}
+        Разобъем прямоугольник $R$ точками
+        \[
+            a = x_0 < x_1 < ... < x_n = b,
+            \quad
+            \Delta x_k = x_k - x_{k-1};
+            \quad
+            c = y_0 < y_1 < ... < y_n = d,
+            \quad
+            \Delta y_l = y_l - y_{l-1};
+        \] на $n \cdot m$ прямоугольников $R_{kl} = [x_{k-1}, x_k] \times [y_{l-1}, y_l], \Delta R_{kl} = \Delta x_k \cdot \Delta y_l$.
+        Пусть $m_{kl} = \inf_{R_kl} f(x,y), M_{kl} = \sup_{R_kl} f(x,y)$. Тогда
+        \[
+            m_{kl} \leqslant f(x,y) \leqslant M_{kl}
+            \quad
+            \forall (x,y) \in R_kl.
+        \]
+        Зафиксируем $x = \xi_k \in [x_{k-1}, x_k]$ и проинтегрируем по y на $[y_{l-1}, y_l]$:
+        \[
+            m_{kl} \Delta y_l
+            \leqslant
+            \int \limits_{y_{l-1}}^{y_l} f(\xi_k, y) dy
+            \leqslant
+            M_{kl} \Delta y_l
+        \]
+        Домножим далее на $\Delta x_k$ и просуммируем полученные неравенства по $l$ от 1 до $m$, а затем по $k$ от 1 до $n$. Имеем:
+        \[
+            \underline{S}_\tau (f) =
+            \sum_{k=1}^n \sum_{l=1}^m m_{kl} \Delta x_k \Delta y_l
+            \leqslant
+            \sum_{k=1}^n I(\xi_k) \Delta x_k
+            \leqslant
+            \overline{S}_\tau (f) =
+            \sum_{k=1}^n \sum_{l=1}^m M_{kl} \Delta x_k \Delta y_l.
+        \]
+        Устремим диаметр разбиения к 0, получаем, в силу интегрируемости функции $f$, что суммы Дарбу стремятся к двойному интегралу. Значит, что предел среднего члена в данном выше неравенстве равен как двойному, так и повторному интегралу. 
+    \end{proof}
+\end{theorem}
