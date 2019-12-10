@@ -1,5 +1,58 @@
 \section{Эквивалентные определения перечислимости (полуразрешимость, область определения вычислимой функции, множество значений вычислимой функции).}
 
 \begin{definition}
-  
+  Множество $A$ полуразрешимо, если его полухарактеристическая функция
+  \[
+    w_A(x) = \begin{cases}
+      1, & \textit{если} \> x \in A \\
+      \textit{не определено}, & \textit{если} \> x \notin A
+    \end{cases}
+  \]
+  вычислима.
 \end{definition}
+
+Пусть $f : A \overset{p}{\to} B$.
+
+\begin{definition}
+  Область определения $f$
+  \[
+    \operatorname{dom} f = \{a \in A \> | \> \exists b \in B \> (a,b) \in f\}
+  \]
+\end{definition}
+
+\begin{definition}
+  Область значений $f$
+  \[
+    \operatorname{rng} f = \{b \in B \> | \> \exists a \in A \> (a,b) \in f\} 
+  \]
+\end{definition}
+
+\begin{statement}
+  Следующие утверждения эквивалентны:
+  \begin{enumerate}
+    \item Множество $A$ перечислимо.
+    \item Множество $A$ полуразрешимо.
+    \item $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, $f$ вычислимая, т.ч. $\operatorname{dom} f \simeq A$.
+    \item $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, $f$ вычислимая, т.ч. $\operatorname{rng} f \simeq A$.
+  \end{enumerate}
+  \begin{proof}
+    1) $\Rightarrow$ 2) \newline
+    Опишем алгоритм, вычисляющий $w_A(x)$: запускаем перечислитель $A$, если на каком-то шаге встретился $x$, то вернем $1$. Так как перечислитель печатает все элементы $A$ и только их, то если $x \in A$, то на каком-то шаге он напечатает его и алгоритм вернет $1$, а если же $x \notin A$, то алгоритм не закончится ни за какое конечное кол-во шагов. \newline
+    
+    2) $\Rightarrow$ 3) \newline
+    $f \simeq w_A$. Действительно, знаем, что $w_A$ вычислима и $\operatorname{dom} w_A \simeq A$. \newline
+
+    3) $\Rightarrow$ 4) \newline
+    Пусть есть вычислимая функция $f : \mathbb{N} \overset{p}{\to} \mathbb{N}$. Определим функцию $g$:
+    \[
+      g(x) = \begin{cases}
+        x, & \textit{если} \> x \in \operatorname{dom} f \\
+        \textit{не определено}, & \textit{иначе}
+      \end{cases}
+    \]
+    Функция $g$ вычислима (т.к. $f$ вычислима), более того $\operatorname{rng} g = \operatorname{dom} f$. \newline
+
+    4) $\Rightarrow$ 1) \newline
+
+  \end{proof}
+\end{statement}
