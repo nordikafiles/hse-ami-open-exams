@@ -3,17 +3,34 @@
 \subsection{Теорема Поста}
 
 \begin{theorem}[Теорема Поста]
-  алал
+  Множества $A$ и $\overline{A}$ перечислимы тогда и только тогда, когда $A$ разрешимо.
   \begin{proof}
-    -
+    $\Rightarrow$ \newline
+    Построим алгоритм, вычисляющий $\bigchi_A(x)$: будем по очереди делать по одному шагу для $w_A(x)$ и $w_{\overline{A}}(x)$, т.к. $x \in A \vee x \in \overline{A}$, то какой-то один из алгоритмов вернет $1$ на каком-то шаге. Если это будет $w_A$, то вернем $1$, если же $w_{\overline{A}}$, то вернем $0$. \newline
+    $\Leftarrow$ \newline
+    Очевидно, из разрешимости следует перечислимость. Если $A$ разрешимо, то и $\overline{A}$ разрешимо.
   \end{proof}
 \end{theorem}
 
 \subsection{Теорема о графике}
 
+\begin{definition}
+  Пусть задана функция $f : \mathbb{N} \overset{p}{\to} \mathbb{N}$. Графиком функции $f$ называется множество $\Gamma_f = \{(x, f(x)) \> | \> x \in \operatorname{dom} f\}$.
+\end{definition}
+
 \begin{theorem}[Теорема о графике]
-  алал
+  Функция $f : \mathbb{N} \overset{p}{\to} \mathbb{N}$ вычислима тогда и только тогда, когда ее график $\Gamma_f$ перечислим.
   \begin{proof}
-    -
+    $\Rightarrow$ \newline
+    Пусть $f$ вычислима. Тогда $\operatorname{dom} f$ вычислима и, следовательно, есть вычислимая функция $g$, т.ч. $\operatorname{rng} g = \operatorname{dom} f$. Рассмотрим функцию $h : \mathbb{N} \to \mathbb{N}^2$, т.ч. $h(x) \simeq (g(x), f(g(x)))$ для всех $x \in \mathbb{N}$. Она вычислима, причем
+    \[
+      (x,y) \in \operatorname{rng} h \Leftrightarrow
+      (x \in \operatorname{rng} g \wedge y = f(x)) \Leftrightarrow
+      (x \in \operatorname{dom} f \wedge y = f(x)) \Leftrightarrow
+      (x,y) \in \Gamma_f
+    \]
+    для всех $x,y \in \mathbb{N}$. Значит, $\Gamma_f = \operatorname{rng} h$, следовательно, $\Gamma_f$ перечислим (т.к. $h$ вычислимая). \newline
+    $\Leftarrow$ \newline
+    Пусть $\Gamma_f$ перечислим. Тогда, чтобы вычислить $f(x)$, достаточно выписывать элементы $\Gamma_f$ и проверять, совпадает ли первая координата пары с $x$. Если совпадает, выдавать вторую координату. Этот процесс завершается тогда и только тогда, когда $x \in \operatorname{dom} f$.
   \end{proof}
 \end{theorem}

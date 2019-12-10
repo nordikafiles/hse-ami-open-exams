@@ -32,15 +32,15 @@
   \begin{enumerate}
     \item Множество $A$ перечислимо.
     \item Множество $A$ полуразрешимо.
-    \item $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, $f$ вычислимая, т.ч. $\operatorname{dom} f \simeq A$.
-    \item $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, $f$ вычислимая, т.ч. $\operatorname{rng} f \simeq A$.
+    \item $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, $f$ вычислимая, т.ч. $\operatorname{dom} f = A$.
+    \item $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, $f$ вычислимая, т.ч. $\operatorname{rng} f = A$.
   \end{enumerate}
   \begin{proof}
     1) $\Rightarrow$ 2) \newline
     Опишем алгоритм, вычисляющий $w_A(x)$: запускаем перечислитель $A$, если на каком-то шаге встретился $x$, то вернем $1$. Так как перечислитель печатает все элементы $A$ и только их, то если $x \in A$, то на каком-то шаге он напечатает его и алгоритм вернет $1$, а если же $x \notin A$, то алгоритм не закончится ни за какое конечное кол-во шагов. \newline
     
     2) $\Rightarrow$ 3) \newline
-    $f \simeq w_A$. Действительно, знаем, что $w_A$ вычислима и $\operatorname{dom} w_A \simeq A$. \newline
+    $f = w_A$. Действительно, знаем, что $w_A$ вычислима и $\operatorname{dom} w_A = A$. \newline
 
     3) $\Rightarrow$ 4) \newline
     Пусть есть вычислимая функция $f : \mathbb{N} \overset{p}{\to} \mathbb{N}$. Определим функцию $g$:
@@ -53,6 +53,6 @@
     Функция $g$ вычислима (т.к. $f$ вычислима), более того $\operatorname{rng} g = \operatorname{dom} f$. \newline
 
     4) $\Rightarrow$ 1) \newline
-
+    Так как $f$ вычислимая, то существует алгоритм $F$, который вычисляет значение $f$. Опишем алгоритм перечислителя: на $n$-ой итерации запустим по очереди $\forall i \in \{0, 1, \dots, n\} \> F(i)$ на $n$ шагов. Таким образом, $\forall x \in \operatorname{rng} f$ алгоритм $F(x)$ будет запущен на необходимое кол-во шагов для того, что вычислить значение $f(x)$. Следовательно, множество $A = \operatorname{rng} f$ перечислимо.
   \end{proof}
 \end{statement}
