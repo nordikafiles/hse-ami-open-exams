@@ -1,1 +1,83 @@
-\section{Сводимости: $m$-сводимость и Тьюрингова сводимость. Их свойства. Полные перечислимые множества.}
+\section{Сводимости: m-сводимость и Тьюрингова сводимость. Их свойства. Полные перечислимые множества.}
+
+\subsection{m-сводимость.}
+
+\begin{definition}
+    Множество $A$ \textbf{m-сводится} к множеству $B$, если существует тотальная вычислимая
+    функция $f$ такая, что $\forall x \ x \in A \iff f(x) \in B$. Обозначается как $A
+    \leqslant_m B$.
+\end{definition}
+
+Свойства m-сводимости:
+\begin{itemize}
+    \item $A \leqslant_m A$ (рефлексивность),
+    \item $A \leqslant_m B \wedge B \leqslant_m C \implies A \leqslant_m C$ (транзитивность),
+    \item
+    $
+    \left.\begin{aligned}
+            &B \text{ разрешимо}\\
+            &A \leqslant_m B
+    \end{aligned}\right\}
+    \implies A \text{ разрешимо},
+    $
+    \item
+    $
+    \left.\begin{aligned}
+            &A \text{ неразрешимо}\\
+            &A \leqslant_m B
+    \end{aligned}\right\}
+    \implies B \text{ неразрешимо}.
+    $
+\end{itemize}
+
+\subsection{Тьюрингова сводимость.}
+
+\begin{definition}
+    Множество $A$ \textbf{T-сводится} (сводится по Тьюрингу) к множеству $B$, если при помощи
+    алгоритма вычисления $\chi_B$ (не обязательно существующего) можно вычислить $\chi_A$.
+    Обозначается как $A \leqslant_T B$.
+\end{definition}
+
+Свойства Тьюринговой сводимости:
+\begin{itemize}
+    \item $A \leqslant_T A$ (рефлексивность),
+    \item $A \leqslant_T B \wedge B \leqslant_T C \implies A \leqslant_T C$ (транзитивность),
+    \item
+    $
+    \left.\begin{aligned}
+            &B \text{ разрешимо}\\
+            &A \leqslant_T B
+    \end{aligned}\right\}
+    \implies A \text{ разрешимо},
+    $
+    \item
+    $
+    \left.\begin{aligned}
+            &A \text{ неразрешимо}\\
+            &A \leqslant_T B
+    \end{aligned}\right\}
+    \implies B \text{ неразрешимо}.
+    $
+    \item $A \leqslant_m B \Rightarrow A \leqslant_T B$
+    \item $A \leqslant_T \overline{A}$
+\end{itemize}
+
+\begin{definition}
+    Перечислимое множество, к которому m-сводится любое другое перечислимое множество, называется
+    \textbf{полным перечислимым множеством}.
+\end{definition}
+
+\begin{theorem}
+    Существует полное перечислимое множество.
+    \begin{proof}
+        Рассмотрим множество $A = \{(n, x) \mid U_n(x) \text{ определено}\}$. Заметим, что оно
+        перечислимо.
+    
+        Пусть мы хотим свести некоторое перечислимое множество $B$ к множеству $A$. Знаем, что
+        в силу перечислимости существует вычислимая частичная функция $f$ такая, что $B
+        = \operatorname{Dom} f$. Эта функция должна присутствовать в универсальной нумерации. Пусть
+        это $U_n$. Тогда для того, чтобы проверить принадлежность $x \in B$, достаточно проверить
+        принадлежность $(n, x) \in A$. Сводящая функция в данном случае выглядит как $m(x) = (n,
+        x)$.
+    \end{proof}
+\end{theorem}
