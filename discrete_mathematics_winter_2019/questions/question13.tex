@@ -1,1 +1,55 @@
 \section{Вывод из гипотез. Лемма о дедукции. Полезные производные правила.}
+
+\subsection{Вывод из гипотез.}
+
+\begin{definition}
+  Пусть $\Gamma$ -- некоторое множество формул. Тогда выводом из множества посылок $\Gamma$ называется последовательность формул, каждая из которых является либо аксиомой, либо элементом $\Gamma$, либо выводится из более ранних формул по правилу modus ponens. Если формула $A$ встречается в некотором выводе из $\Gamma$, то она называется выводимой из $\Gamma$. Обозначение: $\Gamma \vdash A$.
+\end{definition}
+
+\subsection{Лемма о дедукции.}
+
+\begin{lemma}
+  $\vdash A \to A$.
+  \begin{proof}
+    Вывод состоит из 5 формул:
+    \begin{enumerate}
+      \item $A \to ((A \to A) \to A)$ (аксиома 1)
+      \item $A \to (A \to A)$ (аксиома 1)
+      \item $(A \to ((A \to A) \to A)) \to ((A \to (A \to A)) \to (A \to A))$ (аксиома 2)
+      \item $(A \to (A \to A)) \to (A \to A)$ (modus ponens 1, 3)
+      \item $A \to A$ (modus ponens 2, 4)
+    \end{enumerate}
+  \end{proof}
+\end{lemma}
+
+\begin{theorem}[Лемма о дедукции]
+  Из множества посылок выводится импликация $A \to B$ тогда и только тогда, когда при добавлении $A$ к списку посылок выводится $B$. Иначе говоря, $\Gamma \vdash A \to B \Leftrightarrow \Gamma \cup \{A\} \vdash B$.
+  \begin{proof}
+    $\Rightarrow$ \newline
+    Действительно, если к выводу импликации $A \to B$ из $\Gamma$ добавить формулы $A$ и $B$, то получится вывод $B$ из $\Gamma \cup \{A\}$: формулу $A$ можно написать как посылку, а $B$ -- по modus ponens. \newline
+    $\Leftarrow$ \newline
+    Будем доказывать по индукции такое утверждение: если $C_1, \dots, C_n$ есть вывод из $\Gamma \cup \{A\}$, то для всех $i$ импликация $A \to C_i$ выводима из $\Gamma$. Рассуждение по индукции будет опираться на такой принцип, объединяющий в себе и базу, и переход: если импликация $A \to C_1, \dots, A \to C_{i-1}$ выводимы, то и $A \to C_i$ тоже выводима. Разберем несколько случаев:
+    \begin{itemize}
+      \item $C_i$ является аксиомой. В таком случае импликация выводится в три шага: $C_i$; $C_i \to (A \to C_i)$ (аксиома 1); $A \to C_i$ (modus ponens предыдущих двух)
+      \item $C_i$ является посылкой, т.е. элементом $\Gamma \cup \{A\}$.
+        \begin{itemize}
+          \item $C_i \in \Gamma$. Годится тот же вывод, что и для аксиомы.
+          \item $C_i = A$. Импликация $A \to A$ выводится по лемме.
+        \end{itemize}
+      \item $C_i$ выводится по правилу modus ponens из формул $C_j$ и $C_k$ для некоторых $j,k < i$. В этом случае $C_k$ обязательно имеет вид $C_k \to C_i$, иначе modus ponens не применить. По предположению индукции $\Gamma \vdash C_j$ и $\Gamma \vdash C_k$, т.е. $\Gamma \vdash A \to (C_j \to C_i)$. Далее добавим в вывод вторую аксиому: $(A \to (C_j \to C_i)) \to ((A \to C_j) \to (A \to C_i))$ -- и двумя применениями modus ponens получим $A \to C_i$, что и требовалось.
+    \end{itemize}
+    Все случаи разобраны, поэтому индукционный принцин установлен и теорема доказана.
+  \end{proof}
+\end{theorem}
+
+\subsection{Полезные производные правила.}
+
+\begin{statement}
+  Справедливы следующие правила вывода (каждый раз сверху от горизонтальной черты записаны условия теоремы, а снизу -- утверждение) -- следствия леммы о дедукции:
+\end{statement}
+
+\begin{enumerate}
+  \item Правило вывода конъюнкции: $\frac{\Gamma \> \vdash \> A \quad \Gamma \> \vdash \> B}{\Gamma \> \vdash \> A \wedge B}$;
+  \item Правило рассуждения от противного: $\frac{\Gamma, A \> \vdash \> B \quad \Gamma, A \> \vdash \> \neg B}{\Gamma \> \vdash \> \neg A}$;
+  \item Правило разбора случаев: $\frac{\Gamma, A \> \vdash \> C \quad \Gamma, B \> \vdash \> C}{\Gamma, A \vee B \> \vdash \> C}$.
+\end{enumerate}
