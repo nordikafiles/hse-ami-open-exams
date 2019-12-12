@@ -1,1 +1,54 @@
 \section{Теории и их модели. Семантическое следования. Теорема Черча об алгоритмической неразрешимости отношения семантического следования и общезначимости формул (в доказательстве теоремы можно использовать существование конечно определенной полугруппы с неразрешимой проблемой равенства).}
+
+\subsection{Теории и их модели.}
+
+\begin{definition}
+  Теория -- некоторое множество замкнутых формул.
+\end{definition}
+
+\begin{definition}
+  Интерпретация $M$ соответствующей сигнатуры, в которой верны все формулы теории $T$, называется моделью $T$. Обозначение: $M \vDash T$.
+\end{definition}
+
+\subsection{Семантическое следования.}
+
+\begin{definition}
+  Формула $A$ называется семантическим следованием теории $T$, если $A$ истинно во всех моделях $T$. Обозначение: $T \vDash A$.
+\end{definition}
+
+\subsection{Теорема Черча об алгоритмической неразрешимости отношения семантического следования и общезначимости формул.}
+
+\begin{lemma}
+  Пусть $T = \{A_1, \dots, A_n\}$. $\{A_1, \dots, A_n\} \vDash A$ $\Leftrightarrow$ $\vDash (A_1 \wedge \dots \wedge A_n) \to A$.
+  \begin{proof}
+    $\Rightarrow$ Пусть $\{A_1, \dots, A_n\} \vDash A$. 
+    \begin{enumerate}
+      \item Тогда если $A_i$ не является верной в какой-то  интерпретации, то $(A_1 \wedge \dots \wedge A_n) \to A$ является истинной формулой в данной интерпретации (т.к. из лжи следует все что угодно).
+      \item Если же $\forall i \in \{1,\dots n\} \> A_i$ является истинной в какой-то интерпретации, то $(A_1 \wedge \dots \wedge A_n) \to A$ является верной в этой интерпретации.
+    \end{enumerate}
+    1) и 2) $\Rightarrow$ $\vDash (A_1 \wedge \dots \wedge A_n) \to A$. \newline
+    $\Leftarrow$ Пусть $\vDash (A_1 \wedge \dots \wedge A_n) \to A$, тогда если существует интерпретация, где $\forall i \in \{1,\dots n\} \> A_i$ истинно, тогда истинно и $A$. Следовательно, $\{A_1, \dots, A_n\} \vDash A$.
+  \end{proof}
+\end{lemma}
+
+\begin{definition}
+  Теория $T$ разрешима, если $\{A \> | \> T \vDash A\}$ разрешимо.
+\end{definition}
+
+% \begin{definition}
+%   $(M, \cdot)$ является полугруппой, если $\forall x \forall y \forall z (x(yz) = (xy)z)$.
+% \end{definition}
+
+% \begin{theorem}
+
+% \end{theorem}
+
+\begin{theorem}[Теорема Черча]
+  Множество общезначимых формул неразрешимо.
+  \begin{proof}
+    Доказывается как следование Маркова-Поста. \newline
+    Сигнатурой является $\{\cdot, =, a_1, \cdots, a_n\}$. \newline
+    Аксиомы: $T := \{\forall x \forall y \forall z (x(yz) = (xy)z), u_1 = v_1, \dots, u_m = v_m\}$. \newline
+    $u = v$ $\Leftrightarrow$ $T \vDash u = v$, множество $\{(u,v) \> |> [u] = [v]\}$ неразрешимо.
+  \end{proof}
+\end{theorem}
