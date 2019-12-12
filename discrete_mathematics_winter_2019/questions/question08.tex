@@ -1,1 +1,23 @@
 \section{Теорема Клини о неподвижной точке.}
+
+\begin{theorem}[Теорема Клини о неподвижной точке]
+  Пусть $U$ -- главная универсальная вычислимая функция, и вычислимая функция $f : \mathbb{N} \to \mathbb{N}$ тотальна. Тогда существует $n \in \mathbb{N}$, т.ч. $U_n = U_{f(n)}$, т.е. $\forall x \> U(n,x) \simeq U(f(n), x)$.
+  \begin{proof}
+    Рассмотрим функцию $V : \mathbb{N}^2 \overset{p}{\to} \mathbb{N}$, т.ч.
+    \[
+      V(k, x) \simeq U(U(k,k), x)
+    \]
+    для всех $k,x \in \mathbb{N}$. Она, очевидно, вычислима. Вследствие главности $U$, найдется тотальная вычислимая функция $s : \mathbb{N} \to \mathbb{N}$, для которой при любых $k,x \in \mathbb{N}$ верно
+    \[
+      U(s(k), x) \simeq V(k,x) \simeq U(U(k,k), x)
+    \]
+    Тогда функция $f \circ s$ также тотальная вычислимая. Следовательно, существует $t \in \mathbb{N}$, т.ч. $f \circ s = U_t$. Для любых $x \in \mathbb{N}$ имеем
+    \[
+      U(s(t), x) \simeq U(U(t,t), x) \simeq U(f(s(t)), x)
+    \]
+    Положив $n = s(t)$, имеем
+    \[
+      U(n, x) \simeq U(f(n), x)
+    \]
+  \end{proof}
+\end{theorem}

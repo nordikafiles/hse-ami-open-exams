@@ -1,1 +1,49 @@
 \section{Сводимости: $m$-сводимость и Тьюрингова сводимость. Их свойства. Полные перечислимые множества.}
+
+\subsection{$m$-сводимость и ее свойства.}
+
+\begin{definition}
+  Пусть $A,B \subseteq \mathbb{N}$. Множество $A$ $m$-сводится к множеству $B$, если существует тотальная вычислимая функция $f$ такая, что $\forall x \in \mathbb{N}\> (x \in A \Leftrightarrow f(x) \in B)$. Обозначение: $A \leqslant_m B$.
+\end{definition}
+
+$m$-сводимость позволяет построить алгоритм разрешения множества $A$, если есть алгоритм разрешения множества $B$: $\bigchi_A(x) = \bigchi_B(f(x))$.
+
+\begin{statement}
+  Свойства: \newline
+  \begin{enumerate}
+    \item $A \leqslant_m A$
+    \item $A \leqslant_m B \wedge B \leqslant_m C \Rightarrow A \leqslant_m C$
+    \item $\begin{cases}
+      A \leqslant_m B \\
+      B \> \textit{разрешимо}
+    \end{cases} \Rightarrow A \> \textit{разрешимо}$ 
+    \item $\begin{cases}
+      A \leqslant_m B \\
+      A \> \textit{неразрешимо}
+    \end{cases} \Rightarrow B \> \textit{неразрешимо}$ 
+  \end{enumerate}
+\end{statement}
+
+\subsection{Тьюрингова сводимость и ее свойства.}
+
+\begin{definition}
+  Пусть $A, B \subseteq \mathbb{N}$. Множество $A$ $T$-сводится к множеству $B$, если при помощи алгоритма вычисления $\bigchi_B$ можно вычислить $\bigchi_A$. Обозначение: $A \leqslant_T B$.
+\end{definition}
+
+Если $A \leqslant_m B$, то $A \leqslant_T B$. Но, обратное утверждение неверно. \newline
+Тьюрингова сводимость обладает такими же свойствами, что и $m$-сводимость. \newline
+Помимо этого: $A \leqslant_T \mathbb{N} \setminus A$, что неверно для $m$-сводимости.
+
+\subsection{Полные перечислимые множества.}
+
+\begin{definition}
+  Перечислимое множество, к которому $m$-сводится любое другое перечислимое множество, называется полным перечислимым множеством.
+\end{definition}
+
+\begin{statement}
+  Существует полное перечислимое множество
+  \begin{proof}
+    Рассмотрим множество $S = \{(n,x) \> | \> U_n(x) \> \textit{определено} \}$. Понятно, что оно перечислимо. Пусть множество $A \in \mathbb{N}$ перечислимо. Покажем, что $A$ $m$-сводится к $S$. \newline
+    Так как $A$ перечислимо, то $\exists f : \mathbb{N} \overset{p}{\to} \mathbb{N}$, т.ч. $f$ вычислима и $\operatorname{dom} f = A$. Тогда $\exists n \in \mathbb{N} \> U_n = f$. Положим $g(x) = (n, x)$, тогда $\forall x \in \mathbb{N} (x \in A \Leftrightarrow g(x) \in S)$.
+  \end{proof}
+\end{statement}
