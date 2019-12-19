@@ -1,7 +1,46 @@
 \section{Математическое ожидание и дисперсия случайной величины, имеющей нормальное, показательное или равномерное распределение.}
 
-\subsection{Нормальное распределение.}
-
-\subsection{Показательное распределение.}
-
 \subsection{Равномерное распределение.}
+$\xi$ имеет равномерное распределение на $[a,b]$, если
+\[
+    \rho_\xi(x) = \begin{cases}
+        \frac{1}{b - a}, & x \in [a,b] \\
+        0, & x \notin [a,b]
+    \end{cases}
+\]
+Найдем математическое ожидание и дисперсию случайной величины, имеющей равномерное распределение:
+\[
+    E(\xi) = \int \limits_{-\infty}^{\infty} x \rho_\xi(x) dx =
+    \int \limits_{a}^{b} x \frac{1}{b - a} dx =
+    \frac{a + b}{2}
+\]
+\[
+    E(\xi^2) = \int \limits_{-\infty}^{\infty} x^2 \rho_\xi(x) dx =
+    \int \limits_{a}^{b} x^2 \frac{1}{b - a} dx =
+    \frac{a^2 + ab + b^2}{3}
+    \quad \Rightarrow \quad
+    D(\xi) = E(\xi^2) - E(\xi)^2 = \frac{(b-a)^2}{12}
+\]
+\subsection{Показательное распределение.}
+$\xi$ имеет показательное распределение, если
+\[
+    \rho_\xi(x) = \begin{cases}
+        0, & x < 0 \\
+        \lambda e^{-\lambda x}, & x \geqslant 0 \\
+    \end{cases}
+\]
+Найдем математическое ожидание и дисперсию случайной величины, имеющей показательное распределение:
+\[
+    E \xi^k = \int \limits_{-\infty}^{\infty} x^k \rho_\xi(x) dx =
+    \int \limits_{-\infty}^{\infty} x^k \lambda e^{-\lambda x} dx = \frac{k!}{\lambda^k}
+    \Rightarrow
+    E \xi = \frac{1}{\lambda},
+    D \xi = \frac{1}{\lambda^2}
+\]
+
+\subsection{Нормальное распределение.}
+$\xi$ имеет нормальное распределение с параметрами $\mu$ и $\sigma$, если
+\[
+    \rho_\xi(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-\frac{(x - \mu)^2}{2 \sigma^2}},
+    \quad E \xi = \mu, \quad D \xi = \sigma^2
+\]
