@@ -1,7 +1,56 @@
 \section{Независимые случайные величины. Характеризация независимости в терминах функций распределения и плотностей. Плотность распределения суммы двух независимых случайных величин.}
 
 \subsection{Независимые случайные величины.}
+\begin{definition}
+    Случайные величины $\xi$ и $\eta$ называются независимыми, если для всяких промежутков $U$ и $V$ выполняется равенство $$
+        P(\{ w \> | \> \xi(w) \in U \wedge \eta(w) \in V \}) =
+        P(\{ w \> | \> \xi(w) \in U \}) \cdot P(\{ w \> | \> \eta(w) \in V \}),
+        \text{ то есть }
+        \mu_\xi(U) = \mu_\eta(V).
+    $$
+\end{definition}
 
 \subsection{Характеризация независимости в терминах функций распределения и плотностей.}
+\begin{theorem}
+    Случайные величины $\xi$ и $\eta$ независимы тогда и только тогда, когда
+    $F(x,y) = F_\xi(x) \cdot F_\eta(y)$.
+    \begin{proof}
+        Совместное распределение одднозначно определяется функцией распределения $F$. Если $F$ совпадает с функцией распределения меры $\mu_\xi \times \mu_\eta$, то меры совпадают.
+    \end{proof}
+\end{theorem}
+\begin{theorem}
+    Пусть распределения $\xi$ и $\eta$ заданы плотностями. Тогда независимость $\xi$ и $\eta$ равносильна тому, что совместное распределение задано плотностью
+    \[
+        \rho(x, y) = \rho_\xi(x) \cdot \rho_\eta(y).
+    \]
+    \begin{proof}
+        По теореме Фубини:
+        \[
+            \int \limits_a^b \rho_\xi(x) dx \cdot 
+            \int \limits_c^d \rho_\eta(x) dy =
+            \iint \limits_{[a, b] \times [c, d]} \rho_\xi(x) \rho_\eta(y) dx dy =
+            \mu([a, b] \times [c, d]).
+        \]
+    \end{proof}
+\end{theorem}
 
 \subsection{Плотность распределения суммы двух независимых случайных величин.}
+\begin{theorem}
+    Пусть $\xi$ и $\eta$ независимы и их распределение задано плотностями. Тогда распределение суммы $\nu = \xi + \eta$ задано плотностью 
+    \[
+        \rho_\nu(x) = \int \limits_{-\infty}^{+\infty} \rho_\xi(t) \rho_\eta(x - t) dt.
+    \]
+    \begin{proof}
+        \[
+            F_\nu(t) =
+            P(\{ w \> | \> \xi(w) + \eta(w) \leqslant t \})
+            = \iint \limits_{x + y \leqslant t} \rho_\xi(x) \rho_\eta(y) dxdy
+        \]
+        Пусть $u = x + y, v = x$. Тогда, применив теорему Фубини, получим
+        \[
+            \int \limits_{-\infty}^t \left(
+                \int \limits_{-\infty}^{+\infty} \rho_\xi(t) \rho_\eta(x - t) dt
+            \right) du
+        \]
+    \end{proof}
+\end{theorem}
