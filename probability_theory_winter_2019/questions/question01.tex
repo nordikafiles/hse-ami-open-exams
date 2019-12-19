@@ -3,13 +3,48 @@
 \subsection{Вероятностное пространство.}
 
 \begin{definition}
-
+    Класс множеств, который содержит $\varnothing$ и $\Omega$, замкнутый относительно операций $\cap$ и $\cup$, содержит вместе с каждым множеством его дополнение и называется \textbf{алгеброй множеств} или \textbf{алгеброй событий}.
 \end{definition}
 
 \subsection{Сигма алгебра событий.}
+\begin{definition}
+    Если алгебра событий замкнута относительно счетных объединений и пересечений, то ее называют $\sigma$-алгеброй. 
+\end{definition}
 
 \subsection{Борелевская сигма алгебра.}
+\begin{definition}
+    \text{}
+    \begin{itemize}
+        \item Борелевская $\sigma$-алгебра -- минимальная $\sigma$-алгебра, содержащая все открытые подмножества топологического пространства.
+        \item Борелевская $\sigma$-алгебра $\mathcal{B}(\mathbb{R})$  -- $\sigma$-алгебра, порожденная отрезками, интервалами или полуинтервалами.
+    \end{itemize}
+\end{definition}
 
 \subsection{Вероятностная мера.}
+Пусть $A$ -- $\sigma$-алгебра.
+\begin{definition}
+    Функция $P : A \to [0, 1]$ называется \textbf{вероятностной мерой}, если
+    \begin{itemize}
+        \item $P(\Omega) = 1$
+        \item Для любого набора попарно непересекащихся событий $\{A_n\} \in A$ выполняется $P(\bigcup_n A_n) = \sum_n P(A_n)$.
+    \end{itemize}
+\end{definition}
 
 \subsection{Непрерывность вероятностной меры.}
+\begin{theorem}
+    Пусть $(\Omega, A, P)$ -- вероятностное пространство. Тогда
+    \begin{enumerate}
+        \item Если $\{A_n\} \in A, A_n \subset A_{n+1}$ и $A = \bigcup_n A_n$, то $\lim_{n \to \infty} P(A_n) = P(A)$.
+        \item Если $\{A_n\} \in A, A_{n+1} \subset A_n$ и $A = \bigcap_n A_n$, то $\lim_{n \to \infty} P(A_n) = P(A)$.
+    \end{enumerate}
+    \begin{proof}
+        \text{}
+        \begin{enumerate}
+            \item Пусть $C_{n+1} = A_{n+1} \setminus A_n, C_1 = A_1$. Тогда $A = \bigcup_n C_n$ и $A_{n+1} = \bigcup_{k=1}^n C_k$. По своству аддитивности вероятностной меры $P$ получаем:
+            \[
+                P(A) = \sum_n P(C_n) = \lim_{n \to \infty} \sum_{k=1}^n P(C_k) = \lim_{n \to \infty} P(A_{n+1}).
+            \]
+            \item Пусть $A'_n = \Omega \setminus A_n$. Тогда по закону де Моргана получаем первый пункт.
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
