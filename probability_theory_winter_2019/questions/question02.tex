@@ -1,9 +1,63 @@
 \section{Случайная величина и ее распределение. Функция распределения случайной величины. Совместное распределение двух случайных величин. Свойства функции распределения.}
 
 \subsection{Случайная величина и ее распределение.}
+Пусть $(\Omega, A, P)$ -- вероятностное пространство.
+\begin{definition}
+    Функция $\xi : \Omega \to \mathbb{R}$ называется случайной величиной, если для любого промежутка $I$ выполнено:
+    \[
+        \xi^{-1}(I) = \{ w \> | \> \xi(w) \in I \} \in A.
+    \]
+\end{definition}
+\begin{definition}
+    Распределением случайной величины $\xi$ называется вероятностная мера $\mu_{\xi}$ на $B = \mathcal{B}(\mathbb{R})$, определяемая равенством
+    \[
+        \mu_{\xi} (B) = P(\{ w \> | \> \xi(w) \in B \}) = P(\xi^{-1}(B)).
+    \]
+\end{definition}
 
 \subsection{Функция распределения случайной величины.}
+\begin{definition}
+    Функцией распределения $F_\xi$ вероятностной меры $\mu_\xi$ называется функцией распределения случайной величины $\xi$, то есть
+    \[
+        F_\xi(t) = \mu_\xi((-\infty, t]) = P(\{ w \> | \> \xi(w) \leqslant t \}),
+    \]
+    мера $\mu_\xi$ показывает с какой вероятностью $\xi$ принимает те или иные значения.
+\end{definition}
 
 \subsection{Совместное распределение двух случайных величин.}
+Пусть $\xi$ и $\eta$ -- случайные велечины.
+\begin{definition}
+    Отображение  $w \mapsto (\xi(w), \eta(w))$ определяет вероятностную меру $\mu(B) = P(\{ w \> | \> (\xi(w), \eta(w)) \in B\})$ -- совместное распределение случайных величин $\xi$ и $\eta$:
+    \[
+        F(x,y) = \mu((-\infty, x] \times (-\infty, y]) = P(\{ w \> | \> \xi(w) \leqslant x \wedge \eta(w) \leqslant y \}).
+    \]
+\end{definition}
 
 \subsection{Свойства функции распределения.}
+\begin{theorem}
+    Если $F$ -- функция распределения, то
+    \begin{enumerate}
+        \item $0 \leqslant F \leqslant 1$
+        \item $F$ неубывает
+        \item $F$ непрерывна справа, т.е. $\lim_{t \to s+} F(t) = F(s)$
+        \item $\lim_{t \to -\infty} F(t) = 0$ и $\lim_{t \to \infty} F(t) = 1$
+    \end{enumerate}
+    \begin{proof}
+        \text{}
+        \begin{enumerate}
+            \item Очевидно, т.к. $0 \leqslant P \leqslant 1$
+            \item $b > a \Rightarrow F(b) - F(a) = P(a \leqslant \xi \leqslant b)$
+            \item Найдем $\lim_{t \to s+} F(t)$. Пусть
+            $
+                A_n = \left( -\infty, s + \frac{1}{n} \right], A_{n+1} \subset A_n, \bigcap_n A_n  = (-\infty, s].
+            $
+            Из непрерывности меры $\mu$ следует, что
+            \[
+                \mu(A_n) \to \mu \left( \bigcap_n A_n \right)
+                \Rightarrow
+                F \left( s + \frac{1}{n} \right) \to F(s).
+            \]
+            \item Доказывается аналогично 3 свойству.
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
