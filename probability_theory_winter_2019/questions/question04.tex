@@ -1,5 +1,53 @@
 \section{Математическое ожидание дискретной случайной величины и его свойства: линейность, монотонность, неравенство Чебышева. Математическое ожидание произведения независимых величин.}
 
 \subsection{Математическое ожидание дискретной случайной величины и его свойства.}
+Пусть $\xi$ -- случайная дискретная величина на $(\Omega, A, P)$, принимающая значения $\{x_1, ..., x_n\}$. Положим $A_i = \xi^{-1}(\{x_i\})$. Тогда
+\[
+    \xi = x_1 \mathbb{I}_{A_1} + ... + x_n \mathbb{I}_{A_n}.
+\]
+\begin{definition}
+    Математическим ожиданием случайной величины $\xi$ называется число
+    \[
+        E \xi = x_1 P(A_1) + ... + x_n P(A_n).
+    \]
+\end{definition}
+
+\begin{theorem}
+    \text{}
+    \begin{enumerate}
+        \item $E( \alpha \xi + \beta \eta ) = \alpha E \xi + \beta E \eta$
+        \item Если $\xi \geqslant \eta$ почти наверняка, то $E \xi \geqslant E \eta$.
+        \item Если $\xi \geqslant 0$, то для любого $C > 0$ верно $P(\xi \geqslant C) \leqslant \frac{E \xi}{C}$
+    \end{enumerate}
+    \begin{proof}
+        \text{}
+        \begin{enumerate}
+            \item Следует из определения математического ожидания дискретной случайной величины и разложения случайной величины в сумму произведений значений и индикаторов.
+            \item $0 \leqslant E(\eta - \xi) = E\eta - E \xi \Rightarrow E\eta \geqslant E \xi$
+            \item Пусть $A = \{ w \> | \> \xi \geqslant C \}$. Тогда
+            \[
+                \xi \geqslant C \cdot \mathbb{I}_A.
+            \] Неравенство выполняется для любых значений $\mathbb{I}_A$. Применив свойства монотонности и линейности получим:
+            \[
+                E \xi \geqslant C E \mathbb{I}_A = C P(A) \Rightarrow \frac{E \xi}{C} \geqslant P(A).
+            \]
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
 
 \subsection{Математическое ожидание произведения независимых величин.}
+\begin{theorem}
+    Если случайные величины $\xi$ и $\eta$ независимы, то $E (\xi \cdot \eta) = E \xi \cdot E \eta$.
+    \begin{proof}
+        Разложим $\xi$ и $\eta$ в сумму произведений значений и индикаторов:
+        \[
+            \xi = \sum_i a_i \mathbb{I}_{A_i},
+            \eta = \sum_j b_j \mathbb{I}_{B_j}
+            \Rightarrow
+            \xi \cdot \eta = \sum_{i,j} a_ib_j \mathbb{I}_{A_i \cap B_j}
+            \Rightarrow
+            E(\xi \cdot \eta) = \sum_{i,j} a_ib_j P(A_i \cap B_j) =
+            \sum_{i,j} a_ib_j P(A_i)P(B_j) = E \xi \cdot E \eta
+        \]
+    \end{proof}
+\end{theorem}
