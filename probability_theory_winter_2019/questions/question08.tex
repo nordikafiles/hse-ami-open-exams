@@ -1,5 +1,42 @@
 \section{Закон больших чисел в слабой форме. Метод Монте-Карло.}
 
 \subsection{Закон больших чисел в слабой форме.}
+\begin{theorem}
+    Пусть $\{\xi_n\}$ -- последовательность независимых случайных величин таких, что $E \xi_n^2 < \infty$. Обозначим $E \xi_n = \mu_n$ и $D \xi_n = \sigma_n^2$. Тогда
+    \[
+        \frac{\sigma_1^2 + ... + \sigma_n^2}{n^2} \to 0
+        \Rightarrow
+        P \left(
+            \left|
+                \frac{\xi_1 + ... + \xi_n}{n}
+                -
+                \frac{\mu_1 + ... + \mu_n}{n}
+            \right| \geqslant \varepsilon
+        \right) \to 0
+    \]
+    \begin{proof}
+        Из неравенства Чебышева:
+        \[
+            P \left(
+                \left|
+                    \frac{\xi_1 + ... + \xi_n}{n}
+                    -
+                    \frac{\mu_1 + ... + \mu_n}{n}
+                \right| \geqslant \varepsilon
+            \right) \leqslant
+            \frac{\sigma_1^2 + ... + \sigma_n^2}{n^2 \varepsilon^2} \to 0
+        \]
+    \end{proof}
+\end{theorem}
 
 \subsection{Метод Монте-Карло.}
+Предположим, требуется вычислить определенный интеграл $\int \limits_a^b f(x) dx$.
+Рассмотрим случайную величину $\xi$, равномерно распределенную на отрезке $[a,b]$. Тогда $f(\xi)$ также будет случайной величиной, причем ее математическое ожидание выражается как
+\[
+    E f(\xi) = \int \limits_a^b f(x) \rho_\xi(x) dx = \int \limits_a^b f(x) \frac{1}{b - a} dx
+\]
+Таким образом, интеграл выражается как
+\[
+    \int \limits_a^b f(x) dx = (b - a) E f(\xi) \approx
+    \frac{b - a}{N} \sum_{i=1}^N f(x_i).
+\]
