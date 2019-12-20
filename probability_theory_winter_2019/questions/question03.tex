@@ -44,13 +44,21 @@
         \[
             F_\nu(t) =
             P(\{ w \> | \> \xi(w) + \eta(w) \leqslant t \})
-            = \iint \limits_{x + y \leqslant t} \rho_\xi(x) \rho_\eta(y) dxdy
+            = \iint \limits_{x + y \leqslant t} \rho_\xi(x) \rho_\eta(y) dxdy =
+            \int \limits_{-\infty}^{+\infty} \left(
+                \int \limits_{-\infty}^{t - x} \rho_\xi(x) \rho_\eta(y) dy
+            \right) dx =
+            \int \limits_{-\infty}^{+\infty} \rho_\xi(x)  \left(
+                \int \limits_{-\infty}^{t - x}  \rho_\eta(y) dy
+            \right) dx =
         \]
-        Пусть $u = x + y, v = x$. Тогда, применив теорему Фубини, получим
         \[
-            \int \limits_{-\infty}^t \left(
-                \int \limits_{-\infty}^{+\infty} \rho_\xi(t) \rho_\eta(x - t) dt
-            \right) du
+            = \int \limits_{-\infty}^{+\infty} \rho_\xi(x)  \left(
+                \int \limits_{-\infty}^{t}  \rho_\eta(v - x) dv
+            \right) dx =
+            \int \limits_{-\infty}^{t}   \left(
+                \int \limits_{-\infty}^{+\infty} \rho_\xi(x) \rho_\eta(v - x) dv
+            \right) dx
         \]
     \end{proof}
 \end{theorem}
