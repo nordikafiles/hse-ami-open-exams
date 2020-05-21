@@ -1,0 +1,44 @@
+\section{Билет 3.}
+
+\subsection{Неравенство Бесселя (идея доказательства).}
+\begin{theorem}
+    Для любой функции $f \in \hat{C}([a,b])$ и для любой ортонормированной системы ${\psi_k}$ справедливо неравенство
+    \[
+        \sum_{k} f_k^2 \leqslant ||f||^2
+    \]
+    \begin{proof}
+        (todo)
+    \end{proof}
+\end{theorem}
+
+\subsection{Определения замкнутой и полной ортонормированных систем (ОНС).}
+\begin{definition}
+    Ортонормированная система $\{\psi_i\} \subset V$ называется замкнутой, если
+    \[
+        \forall f \in V \>
+        \forall \epsilon > 0 \>
+        \exists \> n \in \mathbb{N}, c_i \in \mathbb{R} \>
+        \left\lVert
+            f - \sum_{k=1}^n c_k \psi_k
+        \right\rVert < \epsilon
+    \]
+\end{definition}
+\begin{definition}
+    Ортонормированная система $\{\psi_i\} \subset V$  называется полной, если для любой $f \in V$ из равенств  $(f, \psi_k) = 0$ следует, что $f$ -- нулевой элемент в $V$.
+\end{definition}
+
+\subsection{Тождество Парсеваля для замкнутой ОНС.}
+\begin{theorem}
+    Неравенство Бесселя для замкнутой ОНС обращяется в равенство Парсеваля:
+    \[
+        \sum_{k} f_k^2 = ||f||^2
+    \]
+    \begin{proof}
+        Так как ортогональная проекция дает наилучшее приближение, имеем
+        \[
+            ||f||^2 - \sum_{k=1}^n f_k^2 = ||f - \sum_{k=1}^n f_k \psi_k||^2 \leqslant ||f - \sum_{k=1}^n c_k \psi_k|| < \epsilon \text{ (в силу замкнутости) }
+            \Rightarrow
+            \sum_{k=1}^n f_k^2 \to ||f||^2
+        \]
+    \end{proof}
+\end{theorem}
