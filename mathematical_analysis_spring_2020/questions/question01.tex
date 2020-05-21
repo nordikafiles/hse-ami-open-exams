@@ -1,0 +1,92 @@
+\section{Билет 1.}
+
+\subsection{Пространство кусочно непрерывных функций на отрезке как пример евклидова пространства.}
+\begin{definition}
+    Функция $f : \mathbb{R} \to \mathbb{R}$ называется \textbf{кусочно непрерывной} на отрезке, если она непрерывна во всех точках этого отрезка, за исключением конечного числа точек, где она имеет разрывы 1-го рода.
+\end{definition}
+\begin{definition}
+    Множество $V = \hat{C}([a,b])$ называется пространством кусочно непрерыных функций на $[a,b]$, если $\forall f \in V : f$ является кусочно непрерывной функцией и для операции скалярного произведения
+    $(f, g) = \int \limits_a^b f(x) g(x) dx$ выполняются следующие свойства:
+    \begin{enumerate}
+        \item $(f, g) = (g, f)$.
+        \item $(f, f) \geqslant 0$ и $(f, f) \Rightarrow f(x) = 0$ на $[a,b]$, исключая, быть может, конечное число точек $x$.
+        \item $(\alpha f + \beta g, \psi) = \alpha (f, \psi) + \beta (g, \psi)$, где $\alpha, \beta \in \mathbb{R}$.
+    \end{enumerate}
+\end{definition}
+
+\subsection{Неравенство Коши-Буняковского в этом пространстве (б.д.).}
+\[
+    (f,g)^2 \leqslant (x,x) \cdot (y,y)
+\]
+
+\subsection{Ортогональные и ортонормированные системы в евклидовом пространстве.}
+\begin{definition}
+    Множество ${x_i} \subset L$ называется ортогональной системой, если элементы этого множества попарно ортогональны, то есть $\forall i, j \> (x_i, x_j) = 0$.
+\end{definition}
+
+\begin{definition}
+    Ортогональная система ${x_i} \subset L$ называется ортонормированной системой, если норма каждого элемента равна 1, то есть $\forall i \> (x_i, x_i) = 1$.
+\end{definition}
+
+
+\subsection{Главный пример: тригонометрическая система функций в $\hat{C}([-\pi, \pi])$.}
+\begin{definition}
+    Множество $L = \{\frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}} \cos x, \frac{1}{\sqrt{\pi}} \sin x, \frac{1}{\sqrt{\pi}} \cos 2x, \frac{1}{\sqrt{\pi}} \sin 2x, ..., \frac{1}{\sqrt{\pi}} \cos nx, \frac{1}{\sqrt{\pi}} \sin nx \} \subset \hat{C}([-\pi,\pi])$ называется основной тригонометрической системой функций.
+\end{definition}
+
+\begin{statement}
+    L -- ортогональная система.
+    \begin{proof}
+        Пусть $k, l$ -- произвольные натуральные числа. Тогда
+        \[
+            \begin{matrix}
+                \int \limits_{-\pi}^{\pi} \frac{1}{\sqrt{\pi}} sin kx \frac{1}{\sqrt{\pi}} \cos lx dx
+                & = &
+                \frac{1}{2\pi} \int \limits_{-\pi}^{\pi} (\sin(x(k - l)) + \sin(x(k + l))) dx
+                & = &
+                0 \\
+                \int \limits_{-\pi}^{\pi} \frac{1}{\sqrt{\pi}} sin kx \frac{1}{\sqrt{\pi}} \sin lx dx
+                & = &
+                \frac{1}{2\pi} \int \limits_{-\pi}^{\pi} (\cos(x(k - l)) - \cos(x(k + l))) dx
+                & = &
+                0 \\
+                \int \limits_{-\pi}^{\pi} \frac{1}{\sqrt{\pi}} cos kx \frac{1}{\sqrt{\pi}} \cos lx dx
+                & = &
+                \frac{1}{2\pi} \int \limits_{-\pi}^{\pi} (\cos(x(k - l)) + \cos(x(k + l))) dx
+                & = &
+                0 \\  
+                & & \int \limits_{-\pi}^{\pi} \frac{1}{\sqrt{\pi}} \cos kx \frac{1}{\sqrt{2\pi}} dx
+                & = & 0 \\
+                & & \int \limits_{-\pi}^{\pi} \frac{1}{\sqrt{\pi}} \sin kx \frac{1}{\sqrt{2\pi}} dx
+                & = & 0 \\
+            \end{matrix}
+        \]
+    \end{proof}
+\end{statement}
+\begin{statement}
+    L -- ортогональная система.
+    \begin{proof}
+        Пусть $k, l$ -- произвольные натуральные числа. Найдем норму каждого элемента множества:
+        \[
+            \begin{matrix}
+                (\frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{2\pi}})
+                & = &
+                \frac{1}{2\pi} \int \limits_{-\pi}^{\pi} dx
+                & = &
+                1 \\
+
+                (\frac{1}{\sqrt{\pi}} \sin kx, \frac{1}{\sqrt{\pi}} \sin kx)
+                & = &
+                \frac{1}{\pi} \int \limits_{-\pi}^{\pi} \sin^2 kx dx
+                & = &
+                1 \\
+
+                (\frac{1}{\sqrt{\pi}} \cos kx, \frac{1}{\sqrt{\pi}} \cos kx)
+                & = &
+                \frac{1}{\pi} \int \limits_{-\pi}^{\pi} \cos^2 kx dx
+                & = &
+                1 \\
+            \end{matrix}
+        \]
+    \end{proof}
+\end{statement}
