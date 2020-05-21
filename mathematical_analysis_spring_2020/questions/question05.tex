@@ -1,0 +1,35 @@
+\section{Билет 5.}
+
+\subsection{Дайте определение свертки двух функций $f, g: \mathbb{R}^n \to \mathbb{R}$.}
+\begin{definition}
+    Пусть $f, g: \mathbb{R}^n \to \mathbb{R}$ -- две функции, интегрируемые относительно меры Лебега на пространстве $\mathbb{R}^n$. Тогда их сверткой называется функция $f * g : \mathbb{R}^n \to \mathbb{R}$ определенная формулой
+    \[
+        (f * g)(x) = \iint \limits_{\mathbb{R}^n} f(y) g(x - y) dy
+    \]
+\end{definition}
+
+\subsection{Докажите, что операция свертки коммутативна (то есть $f * g = g * f$).}
+\begin{statement}
+    Операция свертки коммутативна, то есть $f * g = g * f$.
+    \begin{proof}
+        \[
+            (f * g)(x) = \iint \limits_{\mathbb{R}^n} f(y) g(x - y) dy
+            =
+            [ y = x - t ]
+            =
+            \iint \limits_{\mathbb{R}^n} f(x-t) g(x - x + t) d(x - t)
+            =
+            \iint \limits_{\mathbb{R}^n} f(x-t) g(t) dt
+            =
+            (g * f)(x)
+        \]
+    \end{proof}
+\end{statement}
+
+\subsection{Дайте определение свертки двух $2\pi$-периодических функций $f, g: \mathbb{R} \to \mathbb{R}$.}
+\begin{definition}
+    Пусть $f, g: \mathbb{R}^n \to \mathbb{R}$ -- две интегрируемые на $\mathbb{R}$ $2\pi$-периодические функции. Тогда их сверткой называется функция $f * g : \mathbb{R} \to \mathbb{R}$ определенная формулой
+    \[
+        (f * g)(x) = \int \limits_{-\pi}^{\pi} f(y) g(x - y) dy
+    \]
+\end{definition}
