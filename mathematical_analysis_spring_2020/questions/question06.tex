@@ -1,0 +1,17 @@
+\section{Билет 6.}
+
+\subsection{Дайте определение ядра Дирихле и ядра Фейера.}
+\begin{definition}
+    Ядро Дирихле -- $2\pi$-периодическая функция, задаваемая формулой
+    \[
+        D_n(x) = \frac{\sin \left((n + \frac{1}{2})x\right) }{2\pi \sin (x/2)}
+    \]
+\end{definition}
+
+\subsection{Какой смысл у свертки произвольной периодической функции с этими ядрами? (б.д.)}
+\begin{statement}
+    Пусть $f(x)$ -- интегрируемая на $[-\pi, \pi]$ $2\pi$-периодическая функция, тогда для любых $x \in \mathbb{R}, n \in \mathbb{N}$ выполняется следующее равенство
+    \[
+        S_n(f; x) = \frac{a_0}{2} + \sum (a_n \cos nx + b_n \sin nx) = \int \limits_{-\pi}^{\pi} f(x + u) D_n(u) du = (f * D_n)(x)
+    \]
+\end{statement}
