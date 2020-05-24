@@ -1,0 +1,72 @@
+\section{Билет 22.}
+
+\subsection{Сформулируйте достаточное условие в методе множителей Лагранжа.}
+\begin{theorem}
+    Пусть $X = \{
+        g_i(x) = 0
+        \> | \>
+        i = 1, ..., m
+    \}$ в точке $x^{(0)} \in X$ является гладким многообразием,
+    $f : \mathbb{R}^n \to \mathbb{R}$ -- целевая функция. Допустим, в $x^{(0)}$ выполняются условия:
+    \begin{enumerate}
+        \item Условия Лагранжа:
+        \[
+            \begin{cases}
+                \operatorname{grad} f(x^{(0)}) = \sum_{i = 1}^m \lambda_i^{(0)} \operatorname{grad} g_i(x^{(0)}) \\
+                g_i(x^{(0)}) = 0
+            \end{cases}
+        \]
+        \item $d^2 \left. L(x^{(0)}, \lambda^{(0)}) \right|_{T_{x^{(0)}} X} > 0 \> (< 0)$
+    \end{enumerate}
+    Тогда $x^{(0)}$ -- точка условного локального минимума (максимума) для $f$.
+\end{theorem}
+
+\subsection{Объясните, как на практике проверять это условие (скажем, с помощью примера).}
+\[
+    \begin{cases}
+        2x^2 - y^2 \to extx \\
+        e^{y} - \sin x - 1 = 0
+    \end{cases}
+    \Rightarrow
+    L = 2x^2 - y^2 - \lambda (e^y - \sin x - 1)
+    \Rightarrow
+    \text{ условие Лагранжа: }
+    \begin{cases}
+        4x + \lambda \cos x = 0 \\
+        -2y - \lambda e^3 = 0 \\
+        e^y - \sin x - 1 = 0 \\
+    \end{cases}
+    \> (*)
+\]
+Рассмотрим решение $(x_0, y_0, \lambda_0) = (0,0,0)$
+\[
+    d^2 L = L''_{xx} dx^2 + 2 L''_{xy} dx dy + L''_{yy} dy^2 = (4 - \lambda \sin x) dx^2 + (-2 - \lambda e^y) dy^2
+\]
+\[
+    \left.
+        d^2 L
+    \right|_{(0,0,0)} = 4dx^2 - 2dy^2
+    \text{ -- знаконеопределенная квадратичная форма}
+\]
+\[
+    dg = d(e^y - \sin x - 1) = \begin{cases}
+        d0 = 0 \\
+        e^y dy - \cos x dx \\
+    \end{cases}
+    \Rightarrow
+    e^y dy - \cos x dx = 0
+    \Rightarrow
+    dg(0, 0) = e^0dy - \cos 0 dx = dy - dx = 0
+    \Rightarrow
+\]
+\[
+    \Rightarrow
+    dy = dx
+    \Rightarrow
+    \left.
+        d^2 L
+    \right|_{T_{(x_0, y_0)} X} = 2dx^2 > 0
+    \Rightarrow
+    (x_0, y_0) = (0, 0)
+    \text{ -- точка условного локального минимума.}
+\]
