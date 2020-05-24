@@ -1,0 +1,27 @@
+\section{Билет 13.}
+
+\subsection{Сформулируйте и докажите равенство Планшереля для преобразования Фурье.}
+\begin{statement}
+    Пусть $f, g \in L_1(\mathbb{R}) (f, g : \mathbb{R} \to \mathbb{C})$, и, кроме того, $f' \in L_1(\mathbb{R}), \> f(x), f'(x) \to 0$ при $x \to \infty$. Тогда
+    \[
+        \int \limits_{-\infty}^{\infty} f(x) \overline{g(x)} dx =
+        \frac{1}{2\pi} \int \limits_{-\infty}^{\infty} \hat{f}(y) \overline{\hat{g}(y)} dy
+    \]
+    \begin{proof}
+        Так как $f$ дифференцируема, то для $f$ работает формула обращения Фурье:
+        \[
+            f(x) = \frac{1}{2\pi} v.p. \int \limits_{-\infty}^{\infty} \hat{f}(y) e^{-ixy} dy
+        \]
+        Следовательно,
+        \[
+            \int \limits_{-\infty}^{\infty} f(x) \overline{g(x)} dx =
+            \frac{1}{2\pi} \int \limits_{-\infty}^{\infty} \left(
+                \int \limits_{-\infty}^{\infty} \hat{f}(y) e^{-ixy} dy
+            \right) \overline{g(x)} dx =
+            \frac{1}{2\pi} \int \limits_{-\infty}^{\infty} \hat{f}(y) \left(
+                \int \limits_{-\infty}^{\infty} \overline{g(x)} \overline{e^{ixy}} dx
+            \right) dy =
+            \frac{1}{2\pi} \int \limits_{-\infty}^{\infty} \hat{f}(y) \overline{\hat{g}(y)} dy
+        \]
+    \end{proof}
+\end{statement}
