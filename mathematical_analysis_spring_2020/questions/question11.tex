@@ -1,0 +1,58 @@
+\section{Билет 11.}
+
+\subsection{Дайте определение интеграла Фурье и обратного преобразования Фурье.}
+\begin{definition}
+    Интегралом Фурье от функции $f : \mathbb{R} \to \mathbb{C}$ в точке $x$ называют
+    \[
+        \frac{1}{2\pi} v. p. \int_{-\infty}^{\infty} \hat{f}(y) e^{-ixy} dy
+    \]
+\end{definition}
+\begin{definition}
+    $g(y) \mapsto \tilde{g}(x) = \frac{1}{2\pi} v. p. \int_{-\infty}^{\infty} g(y) e^{-ixy} dy$ называют обратным преобразованием Фурье.
+\end{definition}
+
+\subsection{Сформулируйте и докажите теорему о свертке.}
+\begin{theorem}
+    Если $f, g \in L_1(\mathbb{R})$, то $F[f * g] = F[f] \cdot F[g]$, где $F$ -- преобразование Фурье.
+    \begin{proof}
+        \[
+            F[f * g](y) = \int \limits_{-\infty}^{\infty} (f * g)(x) e^{ixy} dx =
+            \int \limits_{-\infty}^{\infty} \left(
+                \int \limits_{-\infty}^{\infty} f(t)g(x-t) dt
+            \right)(x) e^{ixy} dx =
+            \iint \limits_{\mathbb{R}^2} f(t) g(x-t) e^{ixy} dx dt =
+        \]
+        \[
+            = \left[
+                \begin{matrix}
+                    \tilde{t} =t \\
+                    \tilde{x} = x - t \\
+                    dx dt = d \tilde{x} d \tilde{t} \\
+                \end{matrix}
+            \right]
+            =
+            \iint \limits_{\mathbb{R}^2} f(\tilde{t}) g(\tilde{x}) e^{i(\tilde{x} + t)y} d \tilde{x} d \tilde{t} =
+            \int \limits_{-\infty}^{\infty} f(\tilde{t}) e^{i\tilde{t}y} d \tilde{t}
+            \cdot
+            \int \limits_{-\infty}^{\infty} g(\tilde{x}) e^{i\tilde{x}y} d \tilde{x}
+            =
+            F[f] \cdot F[g]
+        \]
+    \end{proof}
+\end{theorem}
+
+\subsection{Чему равно преобразование Фурье от произведения двух функций?}
+\begin{statement}
+    $F[f \cdot g] = \frac{1}{2\pi} F[f] * F[g]$.
+    \begin{proof}
+        \[
+            F^{-1}[f * g] = 2 \pi F^{-1}[f] \cdot F^{-1}[g]
+            \Rightarrow
+            F^{-1}[F[f] * F[g]] = 2 \pi f \cdot g
+            \Rightarrow
+            F[f] * F[g] = 2 \pi F[f \cdot g]
+            \Rightarrow
+            F[f \cdot g] = \frac{1}{2\pi} F[f] * F[g]
+        \]
+    \end{proof}
+\end{statement}
