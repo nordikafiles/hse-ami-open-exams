@@ -1,0 +1,76 @@
+\section{Билет 14.}
+
+\subsection{Дайте определение гладкого $k$-мерного подмногообразия в $\mathbb{R}^n$ и сопутствующее определение гладких координат.}
+\begin{definition}
+    Пусть $\Phi : V \subseteq \mathbb{R}^k \to M$, где $\Phi$ -- совокупность всех $\varphi_i$. Координаты
+    \[
+        \begin{cases}
+            x_1 = \varphi_1(t_1, ..., t_k) \\
+            \vdots \\
+            x_n = \varphi_n(t_1, ..., t_k) \\
+        \end{cases}
+    \]
+    называются гладкими, если
+    \begin{enumerate}
+        \item $\varphi_1, ..., \varphi_n \in C^{1}(V)$, то есть дифференцируются, как функции многих переменных
+        \item Ранг матрицы частных производных в любой точке $t = (t_1, ..., t_k) \in V$ равен $k$, то есть
+        \[
+            \forall t = (t_1, ..., t_k) \in V
+            \quad
+            \operatorname{rank} \begin{pmatrix}
+                \frac{\partial \varphi_1}{\partial t_1}
+                & ... &
+                \frac{\partial \varphi_n}{\partial t_1} \\
+                \vdots
+                & \ddots &
+                \vdots \\
+                \frac{\partial \varphi_1}{\partial t_k}
+                & ... &
+                \frac{\partial \varphi_n}{\partial t_k} \\
+            \end{pmatrix}
+            = k
+        \]
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Подмножество $M \subseteq \mathbb{R}^n$ называется гладким $k$-мерным подмногообразием, если $\forall x \in M$ существует окрестность $U x \in U$ такая, что на $M \cap U$ можно задать гладкие координаты:
+    \[
+        \begin{cases}
+            x_1 = \varphi_1(t_1, ..., t_k) \\
+            \vdots \\
+            x_n = \varphi_n(t_1, ..., t_k) \\
+        \end{cases}
+        \Leftrightarrow
+        x \in U \cap M
+    \]
+\end{definition}
+
+\subsection{Приведите пример параметрической кривой, которая параметрически задана дифференцируемыми функциями, но не является гладким 1-мерным многообразием в какой-нибудь точке.}
+Пусть $t \in \mathbb{R}$ и
+\[
+    \begin{cases}
+        x = t^3 \\
+        y = t^6 \\
+    \end{cases}
+\]
+Многообразие задано дифференцируемыми функциями, но
+\[
+    \left.
+        \begin{pmatrix}
+            \frac{\partial x}{\partial t}
+            & \frac{\partial y}{\partial t}\\
+        \end{pmatrix}
+    \right|_{t=0} =
+    \left.
+        \begin{pmatrix}
+            3t^2
+            &
+            6t^5
+            \\
+        \end{pmatrix}
+    \right|_{t=0} =
+    \begin{pmatrix}
+        0 & 0\\
+    \end{pmatrix}.
+\]
+Следовательно, данное многообразие не является гладким.
