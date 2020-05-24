@@ -1,0 +1,37 @@
+\section{Билет 15.}
+
+\subsection{Сформулируйте теорему о неявной функции.}
+\begin{theorem}
+    Пусть $F : \mathbb{R}^3 \to \mathbb{R}$ удовлетворяет условиям:
+    \begin{enumerate}
+        \item $F$ определена и непрерывна в окрестности $(x_0, y_0)$
+        \item $F'_y(x_0, y_0) \neq 0$ и  $F'_y$ непрерывна в точке $(x_0, y_0)$
+        \item $F(x_0, y_0) = 0$
+    \end{enumerate}
+    Тогда существует окрестность
+    \[
+        U_{\delta, \epsilon}(x_0, y_0) = \left\{
+            (x,y) \> \left|
+                \>
+                \begin{matrix}[l]
+                    x \in (x_0 - \delta, x_0 + \delta) \\
+                    y \in (y_0 - \epsilon, y_0 + \epsilon) \\
+                \end{matrix}
+            \right.
+        \right\}
+    \]
+    и существует непрерывная функция $f : \mathbb{R} \to \mathbb{R}$ такая, что в окрестности $U_{\delta, \epsilon}(x_0, y_0)$
+    \[
+        F(x,y) = 0 \Leftrightarrow y = f(x).
+    \]
+    Если вдобавок выполнено $F \in C^1(U_{\delta, \epsilon}(x_0, y_0))$, то
+    \[
+        \begin{cases}
+            f \in C^1(U_{\delta}(x_0)) \\
+            f'(x_0) = - \frac{F'_x(x_0, y_0)}{F'_y(x_0, y_0)}
+        \end{cases}
+    \]
+\end{theorem}
+
+\subsection{Допустим, кривая $X \subset \mathbb{R}^3$ задана уравнениями $f(x,y,z) = 0, g(x,y,z) = 0$, и известно, что $\operatorname{grad} f(x_0, y_0, z_0) = (2;0;0), \operatorname{grad} g(x_0, y_0, z_0) = (0;1;3)$. Какие из координат $x,y,z$ можно использовать в качестве локальных координат на $X$ в окрестности точки $(x_0, y_0, z_0)$?}
+(todo) 
