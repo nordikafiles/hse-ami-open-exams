@@ -1,0 +1,17 @@
+\section{Билет 12.}
+
+\subsection{Выведите формулу для производной от функции $\hat{f}(y)$ (преобразования Фурье функции $f$).}
+\[
+    \frac{d F[f]}{dy} = \int \limits_{-\infty}^{\infty} \left(
+        f(x) e^{ixy} dx
+    \right)'_y =
+    \int \limits_{-\infty}^{\infty} f(x) ix e^{ixy} dx =
+    ix F[f]
+\]
+
+\subsection{Какова связь дифференцируемости функции $f(x)$ и асимптотики ее преобразования Фурье $\hat{f}(y)$ при  $y \to \infty$?}
+\begin{statement}
+    Пусть $f$ дифференцируема $k$ раз во всех точках, причем $f^{(m)} \in L_1(\mathbb{R})$ при $m = 0,1,...,k$, и $f^{(m)}(x) \to 0$ при $x \to \infty$ и $m=0,1,...,k$. Тогда $\hat{f}(y) = o\left(
+        \frac{1}{|y|^k}
+    \right)$ при $y \to \infty$.
+\end{statement}
