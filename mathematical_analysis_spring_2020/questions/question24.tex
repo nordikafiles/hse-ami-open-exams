@@ -1,0 +1,50 @@
+\section{Билет 24.}
+
+\subsection{Дайте определение криволинейного интеграла 1-го рода.}
+\begin{definition}
+    Пусть $\tau, c$ -- размеченное разбиение отрезка $[a,b]$, $|\tau| = \max_{i} (t_i - t_{i-1})$ и
+    пусть
+    \[
+        S_{\tau, f, \tilde{c}}^{I} = \sum_{i=1}^{m} f(\varphi(c_i)) \Delta l_i,
+        \quad
+        \Delta l_i = d_2 (\varphi (t_i), \varphi (t_{i-1})) = \sqrt{
+            \sum_{j=1}^n (
+                \varphi_j(t_i) - \varphi_j(t_{i-1})
+            )^2
+        }.
+    \]
+    Тогда $\lim_{|\tau| \to 0} S_{\tau, f, \tilde{c}}^I = \int_{\tilde{c}} f dl$ называется криволинейным интегралом $1$-го рода от $f$ по кривой $\tilde{c}$.
+\end{definition}
+
+\subsection{Объясните, как такие интегралы вычисляются.}
+Пусть $I = \int_C (x + y) dl, C$ -- граница треугольника со сторонами
+\[
+    C_1 = \begin{cases}
+        x = t \\
+        y = 0 \\
+    \end{cases},
+    \quad
+    C_2 = \begin{cases}
+        x = 0 \\
+        y = t \\
+    \end{cases},
+    \quad
+    C_3 = \begin{cases}
+        x = t \\
+        y = 1-t \\
+    \end{cases},
+    \quad
+    t \in [0, 1].
+\]
+Разделим интеграл по частям кривой $C_1, C_2, C_3$:
+\[
+    I = \int_{C_1} (x + y) dl + \int_{C_2} (x + y) dl + \int_{C_3} (x + y) dl = I_1 + I_2 + I_3
+\]
+Найдем каждый интеграл:
+\[
+    I_1 = I_2 = \int_{0}^{1} (t + 0) \sqrt{(x'_t)^2 + (y'_t)^2} dt = \frac{1}{2};
+    \quad
+    I_3 = \int_{0}^{1} (t + 1 - t) \sqrt{(x'_t)^2 + (y'_t)^2} dt = \sqrt{2}
+    \Rightarrow
+    I = 1 + \sqrt{2}
+\]
