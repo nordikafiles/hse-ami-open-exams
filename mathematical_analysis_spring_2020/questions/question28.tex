@@ -1,0 +1,27 @@
+\section{Билет 28.}
+
+\subsection{Дайте определение элемента площади 2-мерной поверхности в $\mathbb{R}^3$ и поверхностного интеграла 1-го рода.}
+\begin{definition}
+    Пусть
+    \[
+        S = \begin{cases}
+            x = x(u,v) \\
+            y = y(u,v) \\
+            z = z(u,v) \\
+        \end{cases},
+        r = r(x,y,z) = r(x(u,v),y(u,v),z(u,v)),
+        E = \left<
+            r'_u, r'_u
+        \right>,
+        G = \left<
+            r'_v, r'_v
+        \right>,
+        F = \left<
+            r'_u, r'_v
+        \right>.
+    \]
+    Тогда $dS = \sqrt{EG - F^2} du dv$ называется элементом площади поверхности $S$.
+\end{definition}
+\begin{definition}
+    $\iint_S f(x,y,z) dS = \iint_D f(x(u,v),y(u,v),z(u,v)) \sqrt{EG - F^2} du dv$ называется поверхностным интегралом 1-го рода.
+\end{definition}
