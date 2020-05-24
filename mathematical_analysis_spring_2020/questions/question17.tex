@@ -1,0 +1,46 @@
+\section{Билет 17.}
+
+\subsection{Дайте определение касательного вектора к подмножеству $x \subseteq \mathbb{R}^n$ в точке $A \in X$.}
+\begin{definition}
+    Пусть
+    \[
+        X \subseteq \mathbb{R}^n,
+        A \in X,
+        \begin{cases}
+            x_1 = \psi_1(s) \\
+            \vdots \\
+            x_n = \psi_n(s)
+        \end{cases},
+    \]
+    \[
+        s \in (-\epsilon, \epsilon)
+        \text{ -- какая-нибудь кривая, такая что }
+        (\psi_1(s), ..., \psi_n(s)) \in X
+        \> \forall s \in (-\epsilon, \epsilon)
+        \text{ и }
+        (\psi_1(0), ..., \psi_n(0)) = A.
+    \]
+    Тогда вектор $\left(
+        \frac{d \psi_1}{ds}(0),
+        ...,
+        \frac{d \psi_n}{ds}(0)
+    \right)$ называется касательным вектором к $X$ в точке $A$.
+\end{definition}
+
+\subsection{Как устроено множество всех касательных векторов к гладкому подмногообразию в фиксированной точке?}
+\begin{statement}
+    Пусть $X$ -- гладкое $k$-мерное многообразие и $x_i = \varphi_i(t_1, ..., t_k)$ -- гладкие координаты в окрестности $x^{(0)} = \Phi(t^{(0)})$. Тогда множество касательных векторов в точке $x^{(0)}$ образует $k$-мерное векторное пространство, линейно порожденное следующими векторами:
+    \[
+        \left(
+            \frac{\partial \varphi_1}{\partial t_1} (t^{(0)}),
+            ...,
+            \frac{\partial \varphi_1n}{\partial t_1} (t^{(0)}),
+        \right),
+        \> ..., \>
+        \left(
+            \frac{\partial \varphi_1}{\partial t_k} (t^{(0)}),
+            ...,
+            \frac{\partial \varphi_1n}{\partial t_k} (t^{(0)}),
+        \right)
+    \]
+\end{statement}
