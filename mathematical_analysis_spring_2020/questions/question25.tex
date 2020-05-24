@@ -1,0 +1,16 @@
+\section{Билет 25.}
+
+\subsection{Дайте определение криволинейного интеграла 2-го рода.}
+Пусть $C = \{ x_j = \varphi_j(t) \> \left| \>
+    \begin{matrix}
+        j = 1, ..., n \\
+        t \in [a, b]
+    \end{matrix}
+\right. \}$ -- кривая, $S_{\tau, f, C}^{II x_1} = \sum_{i=1}^m f(\varphi(c_i)) \cdot (\varphi_1(t_i) - \varphi_1(t_{i-1}))$.
+Тогда $\lim_{|\tau| \to 0} S_{\tau, f, C}^{II x_1} = \int_{C} f(x_1, ..., x_n) dx_1$ -- криволинейный интеграл 2-го рода от функции $f$ по кривой $C$ по переменной $x_1$.
+
+\subsection{Объясните, как такие интегралы вычисляются.}
+Пусть $I = \int_{\Gamma} xy dx, \Gamma$ -- дуга синусоиды $y = \sin x, 0 \leqslant x \leqslant \pi$ (ориентация по возрастанию $x$). Тогда
+\[
+    I = \int \limits_{0}^{\pi} x \sin x dx = - \int_{0}^{\pi} x d \cos x = \left. -x \cos x \right|_0^{\pi} + \int \limits_0^{\pi} \cos x dx = \pi
+\]
