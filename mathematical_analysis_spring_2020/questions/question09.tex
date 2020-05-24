@@ -1,0 +1,28 @@
+\section{Билет 9.}
+
+\subsection{Дайте определение преобразования Фурье для функции $f : \mathbb{R} \to \mathbb{C}$, приведите пример вычисления преобразования Фурье.}
+\begin{definition}
+    Пусть $f : \mathbb{R} \to \mathbb{C}$. Если выражение
+    \[
+        \hat{f}(y) = \int \limits_{\mathbb{R}} f(x) e^{ixy} dx = \lim_{A \to \infty} \int \limits_{-A}^{A} f(x) e^{ixy} dx
+    \]
+    определено для любого $y \in \mathbb{R}$, то $\hat{f}(y) : \mathbb{R} \to \mathbb{C}$ называется преобразованием Фурье от $f$.
+\end{definition}
+Вычислим преобразование Фурье для функции $f(x) = I_{[-1, 1]}(x)$:
+\[
+    \hat{f}(y) = \int \limits_{-\infty}^{\infty} I_{[-1, 1]}(x) e^{ixy} dx = 
+    \int \limits_{-1}^{1} e^{ixy} dx =
+    \int \limits_{-1}^{1} \cos(xy) dx + i \int \limits_{-1}^{1} \sin(xy) dx =
+    \frac{2 \sin y}{y}
+\]
+
+\subsection{Пусть $f \in L_1(\mathbb{R})$. Сформулируйте основную теорему об образе преобразования Фурье.}
+\begin{theorem}
+    Пусть $L_1(\mathbb{R})$ -- пространство функций, абсолютно интегрируемых на $\mathbb{R}$.
+    Если $f \in L_1(\mathbb{R})$, то
+    \begin{enumerate}
+        \item $\hat{f}$ существует
+        \item $\hat{f}$ непрерывна
+        \item $\lim_{y \to \infty} \hat{f} = 0$
+    \end{enumerate}
+\end{theorem}
