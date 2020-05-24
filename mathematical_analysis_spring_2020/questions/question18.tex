@@ -1,0 +1,62 @@
+\section{Билет 18.}
+
+\subsection{Допустим, что все точки множества $X \in \mathbb{R}^n$ удовлетворяют уравнению $f(x) = 0$. Докажите, что в любой точке $x^{(0)} \in X$ любой касательный вектор к $X$ перпендикулярен градиенту $\operatorname{grad} f(x^{(0)})$.}
+\begin{proof}
+    Пусть
+    \[
+        \forall x^{(0)} \subset \mathbb{R}^n
+        \>
+        f(x^{(0)}) = 0
+        \Rightarrow
+        \forall \text{ кривой }
+        \{
+            x_i = \varphi_i(s)
+        \} \subset X
+        \>
+        f(\varphi_1(s), .., \varphi_n(s)) = 0
+    \]
+    Продифференцируем по $S$:
+    \[
+        \frac{\partial f}{ \partial x_1} \cdot \frac{\partial \varphi_1}{\partial S} +
+        ... +
+        \frac{\partial f}{ \partial x_n} \cdot \frac{\partial \varphi_n}{\partial S}
+        = 0,
+        \text{ то есть }
+        \left<
+            \operatorname{grad} f(x^{(0)}),
+            \text{ касательный вектор к $X$ в точке $x^{(0)}$ }
+        \right> = 0
+        \Leftrightarrow
+    \]
+    \[
+        \Leftrightarrow
+        \text{ касательный вектор к $X$ в точке $x^{(0)}$ перпендикулярен }
+        \operatorname{grad} f(x^{(0)})
+    \]
+\end{proof}
+
+\subsection{Опишите касательное пространство к $k$-мерному подмногообразию в $\mathbb{R}^n$, заданному системой неявных уранвнений (б.д.).}
+Пусть $m \leqslant n$ и $X$ задано
+\[
+    \begin{cases}
+        f_1(x) = 0 \\
+        \vdots \\
+        f_m(x) = 0 \\
+    \end{cases},
+\]
+и в $x^{(0)} \in X$
+\[
+    \operatorname{grad} f_1,
+    ...,
+    \operatorname{grad} f_m,
+    \text{ линейно независимы.}
+\]
+Тогда
+\[
+    T_{x^{(0)}} X = \left<
+        \operatorname{grad} f_1,
+        ...,
+        \operatorname{grad} f_m,
+    \right>^{\perp}
+    \text{ (ортогональное дополнение)}.
+\]
