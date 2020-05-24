@@ -1,0 +1,34 @@
+\section{Билет 29.}
+
+\subsection{Дайте определение элемента $k$-мерного объема $k$-мерного многообразия в $\mathbb{R}^n$ и интеграла 1-го рода по $k$-мерному многообразию.}
+\begin{definition}
+    Пусть
+    \[
+        \Omega = \begin{cases}
+            x_1 = x_1 (t_1, ..., t_k) \\
+            \vdots \\
+            x_n = x_n (t_1, ..., t_k) \\
+        \end{cases},
+        \quad
+        (t_1, ..., t_k) \subset \mathbb{R}^k.
+    \]
+    Тогда $d \operatorname{Vol}_k = \sqrt{\det G_r} dt_1 ...dt_k$, где $G_r$ -- матрица Грама
+    \[
+        G_r = \begin{pmatrix}
+            \left< x'_{t_1}, x'_{t_1} \right>
+            & ... &
+            \left< x'_{t_1}, x'_{t_1} \right> \\
+            \vdots & \ddots & \vdots \\
+            \left< x'_{t_k}, x'_{t_1} \right>
+            & ... &
+            \left< x'_{t_k}, x'_{t_k} \right> \\
+        \end{pmatrix}
+    \]
+    называется элементом $k$-мерного многообразия $\Omega$.
+\end{definition}
+\begin{definition}
+    \[
+        \int ... \int_\Omega f d \operatorname{Vol}_k =
+        \int ... \int_M f(x_1(t), ..., x_n(t)) \sqrt{\det G_r} dt_1...dt_k
+    \]
+\end{definition}
