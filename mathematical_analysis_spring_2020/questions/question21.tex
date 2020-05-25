@@ -1,8 +1,78 @@
 \section{Билет 21.}
 
 \subsection{Сформулируйте теорему о множителях Лагранжа. Объясните идею доказательства в случае, если подмножество  $X \subset \mathbb{R}^n$ является гладким многообразием.}
+
+Пусть у нас есть задача вида
+\begin{gather*}
+    \begin{cases}
+        f(x) \xrightarrow{} \mathrm{extr}\\
+        \phi_1(x)=0\\
+        \vdots\\
+        \phi_m(x)=0
+    \end{cases}\\
+    x \in \mathbb{R}^n\\
+    m < n
+\end{gather*}
+\begin{definition}
+\textit{Функцией Лагранжа} называется
+\begin{gather*}
+    L(x,\lambda) = f(x) - \sum_{i=1}^m \lambda_i g_i(x)\\
+    x \in \mathbb{R}^n\\
+    \lambda \in \mathbb{R}^m
+\end{gather*}
+\end{definition}
+$\lambda$ называют \textit{множителями Лагранжа}.\\
 \begin{theorem}
-    \begin{proof}
-        
-    \end{proof}
+\begin{sloppypar}
+	Пусть $x^{(0)}$ --- точка условного локального экстремума в задаче выше, и пусть в окрестности точки $x^{(0)}$ $X$ --- гладкое многообразие. Тогда существуют такие $\lambda^{(0)}$, что точка ${(x^{(0)},\lambda^{(0)}) = (x^{(0)}_1,\dotsc, x^{(0)}_n, \lambda^{(0)}_1, \dotsc, \lambda^{(0)}_m) \in \mathbb{R}^{m+n}}$ является стационарной для $L(x, \lambda)$.
+\end{sloppypar}
 \end{theorem}
+То есть
+\begin{gather*}
+\frac{\partial L}{\partial x_i}(x^{(0)},\lambda^{(0)}) = 0 \quad\forall i \in [1;n]\\
+\frac{\partial L}{\partial \lambda_i}(x^{(0)},\lambda^{(0)}) = 0 \quad\forall i \in [1;m]\\
+\end{gather*}
+Второе в силу линейности по $\lambda$ эквивалентно $g_i(x^{(0)})=0$, что означает, что $x^{(0)} \in X$.\\
+Посмотрим теперь на первое
+\begin{gather*}
+    \frac{\partial L}{\partial x_j} = \frac{\partial}{\partial x_j} (f(x) - \sum_{i=1}^m \lambda_i g_i(x)) = \frac{\partial  f}{\partial x_j} - \sum_{i=1}^m \lambda_i \frac{\partial g_i}{\partial x_j} = 0\\
+    \begin{pmatrix}
+        \frac{\partial f}{\partial x_1} \\
+        \vdots\\
+        \frac{\partial f}{\partial x_n}
+    \end{pmatrix}
+    - \lambda_1 \begin{pmatrix}
+        \frac{\partial g_1}{\partial x_1} \\
+        \vdots\\
+        \frac{\partial g_1}{\partial x_n}
+    \end{pmatrix}
+    - \dotsc
+    - \lambda_m \begin{pmatrix}
+        \frac{\partial g_m}{\partial x_1} \\
+        \vdots\\
+        \frac{\partial g_m}{\partial x_n}
+    \end{pmatrix} = \begin{pmatrix}
+        0\\
+        \vdots\\
+        0
+    \end{pmatrix}
+\end{gather*}
+Это значит, что
+\begin{gather*}
+    \mathrm{grad}f = \sum_{i=1}^m \lambda_i \mathrm{grad}g_i
+\end{gather*}
+Так как, все наши переходы были равносильными, нам осталось доказать, что найдутся такие $\lambda$, то есть, что $\mathrm{grad}f$ является линейной комбинацией $\mathrm{grad}g_i$ в данной точке.\\
+Поскольку $X$ гладкая в точке $x^{(0)}$, будем предполагать, что $X$ удовлетворяет условию теоремы о неявном отображении, то есть градиенты $\mathrm{grad}g_i$ линейно независимы. Без ограничения общности будем считать $x^{(0)}\in X \subset \mathbb{R}^n$ --- точка условного локального минимума. Тогда, если возьмём какую-нибудь кривую $\{x_i=\phi(t)\} \subseteq X$, такую, что $\phi_i(0)=x_i^{(0)}$, то на ней это также будет точка локального минимума, запишем касательный вектор
+\begin{gather*}
+    u = (\frac{d\phi_1}{dt}(0),\dotsc,\frac{d\phi_n}{dt}(0)) \in T_{x^{(0)}}X
+\end{gather*}
+Функция $\alpha(t)=f(\phi_1(t),\dotsc,\phi_n(t))$ имеет в $t=0$ локальный минимум. По теореме Ферма $\frac{d \alpha}{dt}(0) = 0$. А это
+\begin{gather*}
+    \frac{\partial f}{\partial x_1}(x^{(0)})\cdot \frac{d \phi_1}{dt}(0)+
+    \dotsc + \frac{\partial f}{\partial x_n}(x^{(0)})\cdot \frac{d \phi_n}{dt}(0) = <\mathrm{grad}f(x^{0}),u> = 0
+\end{gather*}
+Таким образом, градиент целевой функции в точки экстремума перпендикулярен любому касательному вектору $u \in T_{x^{(0)}}X$, то есть $\mathrm{grad}f(x^{(0)}) \perp T_{x^{(0)}}X$. А это значит, что этот градиент лежит в ортогональном дополнении
+\begin{gather*}
+    \mathrm{grad}f(x^{(0)}) \in (T_{x^{(0)}}X)^\perp = <\mathrm{grad}g_1(x^{(0)}),\dotsc,\mathrm{grad}g_m(x^{(0)})>
+\end{gather*}
+А раз $\mathrm{grad}f(x^{(0)})$ лежит в линейной оболочке $\mathrm{grad}g_i(x^{(0)})$, то он является их линейной комбинацией.

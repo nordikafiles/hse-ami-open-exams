@@ -1,3 +1,6 @@
 [submodule "discrete_mathematics_winter_2019/sources/HSE-FCS-AMIS-DS-Year-2-Colloq"]
 	path = discrete_mathematics_winter_2019/sources/HSE-FCS-AMIS-DS-Year-2-Colloq
 	url = https://github.com/vporyadke/HSE-FCS-AMIS-DS-Year-2-Colloq
+[submodule "mathematical_analysis_spring_2020/sources/HSE-FCS-AMIS-Calculus-Year2-Colloq2"]
+	path = mathematical_analysis_spring_2020/sources/HSE-FCS-AMIS-Calculus-Year2-Colloq2
+	url = https://github.com/vporyadke/HSE-FCS-AMIS-Calculus-Year2-Colloq2.git

@@ -1,0 +1,26 @@
+\section{Билет 33.}
+
+\subsection{Дайте определение согласованных ориентаций многообразия и его границы. Дайте определение дифференциала от $k$-формы. Запишите общую формулу Стокса.}
+Будем обозначать границу многообразия $\Omega$ как $\partial \Omega$. Заметим, что если у $k$-мерного многообразия есть граница, то она имеет размерность $k - 1$.
+
+\begin{definition}
+    Будем говорить, что ориентации $\Omega$ и $\partial \Omega$ согласованы, если для любой точки $x \in \partial \Omega$ для любого положительного базиса $v_1, \ldots v_{k - 1}$ в $T_x \partial \Omega$, базис $v_1, \ldots, v_{k - 1}, \vec{n}$ положителен в $T_x \Omega$, где $\vec{n}$ ---~ это вектор в $T_x \Omega$, перпендикулярный $T_x \partial \Omega$ и смотрящий наружу\footnote{Это можно формализовать, например, как отрицательное скалярное произведение с любым вектором, соединяющим $x$ и точку из окрестности $x$ из $\Omega$. Но лектор это никак не формализовал.} $\Omega$.
+\end{definition}
+
+Мы привыкли, что дифференциал суммы равен сумме дифференциалов. Поэтому для определения дифференциала от дифференциальной формы достаточно определить дифференциал от грассманова монома.
+
+\[ \diff(f \diff x_{i_1} \land \ldots \land \diff x_{i_k}) := \diff f \land \diff x_{i_1} \land \ldots \land \diff x_{i_k}; \]
+
+\begin{remark}
+    Дифференциал $k$-формы является $(k + 1)$-формой.
+\end{remark}
+
+Для примера посчитаем дифференциал от дифференциала некоторой функции $f:\mathbb{R}^n \to \mathbb{R}$.
+
+\[\diff (\diff f) = \diff \left(\sum_{i = 1}^n \frac{\partial f}{\partial x_i}\diff x_i \right) = \sum_{i = 1}^n \sum_{j = 1}^n \frac{\partial^2 f}{\partial x_i \partial x_j} \diff x_j \land \diff x_i; \]
+
+При этом слагаемые вида $\frac{\partial^2 f}{\partial x_i \partial x_i} \diff x_i \land \diff x_i$ сразу зануляются, а слагаемые вида $\frac{\partial^2 f}{\partial x_i \partial x_j} \diff x_j \land \diff x_i$ сократятся с $\frac{\partial^2 f}{\partial x_j \partial x_i} \diff x_i \land \diff x_j$. Значит $\diff(\diff f) = 0$.
+
+Пусть теперь $\Omega \subseteq \mathbb{R}^n$ ---~ $k$-мерное многообразие с согласованными ориентациями на самом многообразии и на границе, а $\omega$ ---~ дифференциальная $(k - 1)$-форма на $\Omega$. Тогда верна (общая) формула Стокса:
+
+\[ \int\limits_{\partial \Omega} \omega = \int\limits_\Omega \diff \omega; \] 
